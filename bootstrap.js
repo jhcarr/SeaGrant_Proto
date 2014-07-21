@@ -772,7 +772,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "SeaGrant_Proto.view.Main": []
+  "SeaGrant_Proto.view.Home": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1716,8 +1716,8 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
-  "SeaGrant_Proto.view.Main": [
-    "widget.main"
+  "SeaGrant_Proto.view.Home": [
+    "widget.Home"
   ]
 });
 
