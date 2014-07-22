@@ -5,7 +5,20 @@ html,body{position:relative;width:100%;height:100%}.x-fullscreen{position:absolu
 	color: red;
 	max-height: 130px;
 }
-#ext-element-14{
-	margin-left: 20px;
-	margin-top: 5px;
+#ext-container-1{
+	margin-top: 180px;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	background-color: orange;
+}
+
+#ext-container-2{
+	margin-top: 180px;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	background-color: green;
 }

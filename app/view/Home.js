@@ -1,6 +1,6 @@
 Ext.define('SeaGrant_Proto.view.Home', {
-	extend: 'Ext.form.Panel',
-	requires: 'Ext.form.FieldSet',
+	extend: 'Ext.Container',
+	requires: ['Ext.form.FieldSet', 'Ext.TabPanel', 'Ext.dataview.List'],
 	xtype: 'Home',
 	aliais: 'widget.home',
 	config: {
@@ -13,6 +13,33 @@ Ext.define('SeaGrant_Proto.view.Home', {
 				title: 'Whats Fresh?',
 				docked: 'top'
 			},
+			{
+				xtype: 'tabpanel',			
+				tabBarPosition: 'bottom',
+				defaults: {
+					styleHtmlContext: true
+				},
+				items:[
+					
+					{
+						title: 'List View',
+						iconCls: 'user',
+						xtype: 'list',
+						store: 'Info',
+						itemId: 'homeList',
+						loadingText: 'Loading Notes ...',
+						emptyText: '</pre><div class="\&quot;notes-list-empty-text\&quot;">No notes found.</div><pre>',
+						onItemDisclosure: true,
+						// grouped: true,
+						itemTpl: '</pre><div class="list-item-title">{title}</div><div class="list-item-narrative">{narrative}</div><pre>'
+					},
+					{
+						title: 'Map View',
+						iconCls: 'home',
+						html: 'Map View'
+					}
+				]
+			},	
 			{
 				html:'Filter by City or Product:'
 			},
@@ -35,47 +62,55 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						ui: 'go',
 						text: 'Submit',
 						itemId: 'submitButton'
-					}
-				]
-			 },			
-			 {
-				xtype: 'toolbar',
-				docked: 'bottom',
-				items: [
-					{
-						xtype: 'spacer'
 					},
-					{
-						xtype: 'button',
-						ui: 'action',
-						text: 'Map View',
-						itemId: 'mapButton'
-					},
-					{
-						xtype: 'spacer'
-					},
-					{
-						xtype: 'button',
-						ui: 'action',
-						text: 'List View',
-						itemId: 'listButton'
-					},
-					{
-						xtype: 'spacer'
-					}
+					
 				]
 			}
+			// This declairs a bottom toolbar and buttons
+			// {
+			// 	xtype: 'toolbar',
+			// 	docked: 'bottom',
+			// 	items: [
+			// 		{
+			// 			xtype: 'spacer'
+			// 		},
+			// 		{
+			// 			xtype: 'button',
+			// 			ui: 'action',
+			// 			text: 'Map View',
+			// 			itemId: 'mapButton'
+			// 		},
+			// 		{
+			// 			xtype: 'spacer'
+			// 		},
+			// 		{
+			// 			xtype: 'button',
+			// 			ui: 'action',
+			// 			text: 'List View',
+			// 			itemId: 'listButton'
+			// 		},
+			// 		{
+			// 			xtype: 'spacer'
+			// 		}
+			// 	]
+			// }
 		],
 		listeners: [
+			// Bottom button listeners
+			// {
+			// 	delegate: '#mapButton',
+			// 	event: 'tap',
+			// 	fn: 'onMapButtonTap's
+			// },
+			// {
+			// 	delegate: '#listButton',
+			// 	event: 'tap',
+			// 	fn: 'onListButtonTap'
+			// },
 			{
-				delegate: '#mapButton',
-				event: 'tap',
-				fn: 'onMapButtonTap'
-			},
-			{
-				delegate: '#listButton',
-				event: 'tap',
-				fn: 'onListButtonTap'
+				delegate: '#homeList',
+				event: 'disclose',
+				fn: 'onHomeListDisclose'
 			},
 			{
 				delegate: '#submitButton',
@@ -84,8 +119,12 @@ Ext.define('SeaGrant_Proto.view.Home', {
 			}
 		]
 	},
+	onHomeListDisclose: function(list, record, target, index, evt, options){
+		console.log('onHomeListDisclose');
+		this.fireEvent("onHomeListDisclose", this, record);
+	},
 	onSubmitButtonTap: function(){
-		console.log("onSubmitButtonTap");
+		console.log('onSubmitButtonTap');
 		this.fireEvent("onSubmitButtonTap");
 	},
 	onListButtonTap: function(){
