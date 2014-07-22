@@ -12,6 +12,8 @@
 
 Ext.application({
     name: 'SeaGrant_Proto',
+    controllers: ["List"],
+    stores: ["Info"],
     views: ["Home"],
 
     launch: function() {
