@@ -772,7 +772,11 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "SeaGrant_Proto.view.Home": []
+  "SeaGrant_Proto.controller.List": [],
+  "SeaGrant_Proto.store.Info": [],
+  "SeaGrant_Proto.view.Detail": [],
+  "SeaGrant_Proto.view.Home": [],
+  "SeaGrant_Proto.view.Location": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1716,8 +1720,17 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
+  "SeaGrant_Proto.controller.List": [],
+  "SeaGrant_Proto.store.Info": [],
+  "SeaGrant_Proto.view.Detail": [
+    "widget.detail"
+  ],
   "SeaGrant_Proto.view.Home": [
-    "widget.Home"
+    "widget.Home",
+    "widget.home"
+  ],
+  "SeaGrant_Proto.view.Location": [
+    "widget.location"
   ]
 });
 
