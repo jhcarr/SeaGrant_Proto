@@ -2,7 +2,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 	extend: 'Ext.Container',
 	requires: ['Ext.form.FieldSet', 'Ext.TabPanel', 'Ext.dataview.List'],
 	xtype: 'Home',
-	aliais: 'widget.home',
+	alias: 'widget.home',
 	config: {
 		layout: {
 			type: 'fit'
@@ -24,12 +24,25 @@ Ext.define('SeaGrant_Proto.view.Home', {
 					{
 						title: 'List View',
 						iconCls: 'user',
+						config: {
+							scrollable: {
+								direction: 'vertical',
+								directionLock: true,
+								// trying to set scroll bar always visible
+								// indicators: { 
+								// 	y: {
+								// 		autoHide: false
+								// 	}
+								// }
+							}
+						},
 						xtype: 'list',
 						store: 'Info',
 						itemId: 'homeList',
 						loadingText: 'Loading Notes ...',
 						emptyText: '</pre><div class="\&quot;notes-list-empty-text\&quot;">No notes found.</div><pre>',
-						onItemDisclosure: true,
+						// onItemDisclosure: true,
+						// onItemTap: true,
 						// grouped: true,
 						itemTpl: '</pre><div class="list-item-title">{title}</div><div class="list-item-narrative">{narrative}</div><pre>'
 					},
@@ -107,11 +120,17 @@ Ext.define('SeaGrant_Proto.view.Home', {
 			// 	event: 'tap',
 			// 	fn: 'onListButtonTap'
 			// },
+			// This listener is used to get an event when a list item is selected
 			{
 				delegate: '#homeList',
-				event: 'disclose',
+				event: 'itemtap',
 				fn: 'onHomeListDisclose'
 			},
+			// {
+			// 	delegate: '#homeList',
+			// 	event: 'disclose',
+			// 	fn: 'onHomeListDisclose'
+			// },
 			{
 				delegate: '#submitButton',
 				event: 'tap',
@@ -120,20 +139,21 @@ Ext.define('SeaGrant_Proto.view.Home', {
 		]
 	},
 	onHomeListDisclose: function(list, record, target, index, evt, options){
-		console.log('onHomeListDisclose');
-		this.fireEvent("onHomeListDisclose", this, record);
+		console.log('viewListItemCommand');
+		this.fireEvent("viewListItemCommand", this, record);
+		Ext.Msg.alert('list item chosen", "its cool');
 	},
 	onSubmitButtonTap: function(){
 		console.log('onSubmitButtonTap');
 		this.fireEvent("onSubmitButtonTap");
-	},
-	onListButtonTap: function(){
-		console.log("onListButtonTap");
-		this.fireEvent("onListButtonTap", this);
-	},
-	onMapButtonTap: function(){
-		console.log("onMapButtonTap");
-		this.fireEvent("onMapButtonTap", this);
 	}
+	// onListButtonTap: function(){
+	// 	console.log("onListButtonTap");
+	// 	this.fireEvent("onListButtonTap", this);
+	// },
+	// onMapButtonTap: function(){
+	// 	console.log("onMapButtonTap");
+	// 	this.fireEvent("onMapButtonTap", this);
+	// }
 
 });
