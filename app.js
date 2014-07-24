@@ -19,8 +19,8 @@ Ext.application({
     launch: function() {
         // Initialize the main view
         Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Home'));
-        // Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Detail'));
-        // Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Location'));
+        Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Detail'));
+        Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Location'));
     }
 
    

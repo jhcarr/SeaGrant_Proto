@@ -1,6 +1,6 @@
 Ext.define('SeaGrant_Proto.view.Home', {
-	extend: 'Ext.Container',
-	requires: ['Ext.form.FieldSet', 'Ext.TabPanel', 'Ext.dataview.List', 'Ext.MessageBox'],
+	extend: 'Ext.Panel',
+	requires: ['Ext.form.FieldSet', 'Ext.TabPanel', 'Ext.dataview.List', 'Ext.MessageBox', 'SeaGrant_Proto.view.Map'],
 	xtype: 'Home',
 	alias: 'widget.home',
 	config: {
@@ -13,6 +13,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 				title: 'Whats Fresh?',
 				docked: 'top'
 			},
+
 			{
 				xtype: 'tabpanel',			
 				tabBarPosition: 'bottom',
@@ -27,13 +28,8 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						config: {
 							scrollable: {
 								direction: 'vertical',
-								directionLock: true,
-								// trying to set scroll bar always visible
-								// indicators: { 
-								// 	y: {
-								// 		autoHide: false
-								// 	}
-								// }
+								directionLock: true
+	
 							}
 						},
 						xtype: 'list',
@@ -41,25 +37,23 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						itemId: 'homeList',
 						loadingText: 'Loading Notes ...',
 						emptyText: '</pre><div class="\&quot;notes-list-empty-text\&quot;">No notes found.</div><pre>',
-						// onItemDisclosure: true,
-						// onItemTap: true,
-						// grouped: true,
 						itemTpl: '</pre><div class="list-item-title">{title}</div><div class="list-item-narrative">{narrative}</div><pre>'
 					},
 					{
 						title: 'Map View',
-						iconCls: 'home',
-						html: 'Map View'
+						iconCls: 'maps',
+						xtype:'SeaGrantMap'
 					}
 				]
 			},	
-			{
-				html:'Filter by City or Product:'
-			},
+			
 			{
 				xtype: 'fieldset',
 				itemId: 'filter',
-				items: [					
+				items: [	
+					{
+						html:'Filter by City or Product'
+					},			
 					{
 						xtype: 'textfield',
 						name: 'city',
@@ -75,85 +69,32 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						ui: 'go',
 						text: 'Submit',
 						itemId: 'submitButton'
-					},
+					}
 					
 				]
 			}
-			// This declairs a bottom toolbar and buttons
-			// {
-			// 	xtype: 'toolbar',
-			// 	docked: 'bottom',
-			// 	items: [
-			// 		{
-			// 			xtype: 'spacer'
-			// 		},
-			// 		{
-			// 			xtype: 'button',
-			// 			ui: 'action',
-			// 			text: 'Map View',
-			// 			itemId: 'mapButton'
-			// 		},
-			// 		{
-			// 			xtype: 'spacer'
-			// 		},
-			// 		{
-			// 			xtype: 'button',
-			// 			ui: 'action',
-			// 			text: 'List View',
-			// 			itemId: 'listButton'
-			// 		},
-			// 		{
-			// 			xtype: 'spacer'
-			// 		}
-			// 	]
-			// }
+		
 		],
 		listeners: [
-			// Bottom button listeners
-			// {
-			// 	delegate: '#mapButton',
-			// 	event: 'tap',
-			// 	fn: 'onMapButtonTap's
-			// },
-			// {
-			// 	delegate: '#listButton',
-			// 	event: 'tap',
-			// 	fn: 'onListButtonTap'
-			// },
-			// This listener is used to get an event when a list item is selected
-			{
-				delegate: '#homeList',
-				event: 'itemtap',
-				fn: 'onHomeListDisclose'
-			},
-			// {
-			// 	delegate: '#homeList',
-			// 	event: 'disclose',
-			// 	fn: 'onHomeListDisclose'
-			// },
 			{
 				delegate: '#submitButton',
 				event: 'tap',
 				fn: 'onSubmitButtonTap'
+			},
+			{
+				delegate: '#homeList',
+				event: 'itemtap',
+				fn: 'onHomeListDisclose'
 			}
 		]
 	},
 	onHomeListDisclose: function(list, record, target, index, evt, options){
 		console.log('viewListItemCommand');
-		this.fireEvent("viewListItemCommand", this, record);
-		// Ext.Msg.alert('list item chosen '+ record + ' its cool');
+		this.fireEvent("viewListItemCommand", record);
 	},
 	onSubmitButtonTap: function(){
 		console.log('onSubmitButtonTap');
 		this.fireEvent("onSubmitButtonTap");
 	}
-	// onListButtonTap: function(){
-	// 	console.log("onListButtonTap");
-	// 	this.fireEvent("onListButtonTap", this);
-	// },
-	// onMapButtonTap: function(){
-	// 	console.log("onMapButtonTap");
-	// 	this.fireEvent("onMapButtonTap", this);
-	// }
 
 });
