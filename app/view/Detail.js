@@ -4,6 +4,16 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 	alias: 'widget.detail',
 	fullscreen: true,
 	config: {
+		refs: {
+			cont: 'cont'
+		},
+		control: {
+			cont: {
+				passingRecord: 'onPassingRecord'
+			}
+		}
+	},
+	config: {
 		defaults: {
 			styleHtmlContent: true,
 			title: ''+this.record+'',
@@ -32,10 +42,10 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 		// This declairs a bottom toolbar and buttons
 			{
 				xtype: 'toolbar',
-				text: '{title',
+				// text: '{title',
 				// styleHtmlContent: true,
 				// cls: 'storeName',
-				Tpl: '<div class="ListItemContent">{title}</div>',
+				// Tpl: '<div class="ListItemContent">{title}</div>',
 				// text: record,
 				docked: 'top'
 			},
@@ -85,9 +95,9 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 	// 	console.log('onPassingRecord');
 	// 	Ext.Msg.alert(''+ record + ', its cool');
 	// },
-	onHomeButtonTap: function(record, target, index, evt, options){
+	onHomeButtonTap: function(list, record, target, index, evt, options){
 		console.log('viewHomeCommand');
-		Ext.Msg.alert(''+ record + ', its cool');
+		Ext.Msg.alert(''+ record+ ', its cool');
 		this.fireEvent('viewHomeCommand', this, record);
 	},
 	onLocationButtonTap: function(list, record, target, index, evt, options){
