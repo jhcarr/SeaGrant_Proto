@@ -1,30 +1,27 @@
-// Ext.Loader.setPath('SeaGrant_Proto');
+Ext.Loader.setPath('SeaGrant_Proto');
 // Ext.require['SeaGrant_Proto.view.Home'];
-describe("OnSubmitButtonTap", function(){
 
-	it("a = c", function(){
-		var c = 12;
-		var a = 12;
-		expect(a).toBe(c);
-	});
 
-	it("launches", function(){
-		expect(Ext).not.toBeDefined();
-	});
-
-	// it(' launches a view', function(){
-	// 	var view = Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Home'));
-
-	// 	expect(view.$className).toEqual('SeaGrant_Proto.view.Home');
-	// });
-
-	it(" submit button works", function(){
-		var tap = "OnSubmitButtonTap";
-
-		expect("OnSubmitButtonTap").toBe(tap);
+describe("onViewLocationCommand", function(){
+	it(" sets view to location view", function(){
+		
 	});
 });
 
-// describe("onHomeListDisclose", function(){
-// 	it("")
-// });
+describe("onViewHomeCommand", function(){
+	it(" sets view to home view", function(){
+		
+	});
+});
+
+describe("onViewDetailCommand", function(){
+	it(" sets view to detail view", function(){
+		
+	});
+});
+
+describe("onViewListItemCommand", function(){
+	it(" sets view to list item view", function(){
+		
+	});
+});

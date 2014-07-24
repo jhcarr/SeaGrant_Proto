@@ -1720,7 +1720,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
-  "SeaGrant_Proto.controller.List": [],
+  "SeaGrant_Proto.controller.List": [
+    "cont"
+  ],
   "SeaGrant_Proto.store.Info": [],
   "SeaGrant_Proto.view.Detail": [
     "widget.detail"
