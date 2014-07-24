@@ -1,5 +1,6 @@
 Ext.define('SeaGrant_Proto.view.Location', {
 	extend: 'Ext.Container',
+	requires: 'SeaGrant_Proto.view.Map',
 	alias: 'widget.location',
 	config: {
 		layout: {
@@ -10,6 +11,9 @@ Ext.define('SeaGrant_Proto.view.Location', {
 				xtype: 'toolbar',
 				title: 'Location',
 				docked: 'top'
+			},
+			{
+				xtype:'SeaGrantMap'
 			},
 			{
 				xtype: 'toolbar',

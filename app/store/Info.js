@@ -4,28 +4,34 @@ Ext.define('SeaGrant_Proto.store.Info', {
 	config: {
 			data: [
 			{
-				title: 'Note 0',
-				narrative: 'Narrative 0'
+				title: 'Newport',
+				narrative: '44.634115, -124.062796',
+				id: 'Newport'
 			},
 			{
-				title: 'Note 1',
-				narrative: 'Narrative 1'
+				title: 'Waldport',
+				narrative: '44.30737, -124.066572',
+				id: 'Waldport'
 			},
 			{
-				title: 'Note 2',
-				narrative: 'Narrative 2'
+				title: 'Florence',
+				narrative: '43.976162, -124.106741',
+				id: 'Florence'
 			},
 			{
-				title: 'Note 3',
-				narrative: 'Narrative 3'
+				title: 'Reedsport',
+				narrative: '43.706747, -124.113607',
+				id: 'Reedsport'
 			},
 			{
-				title: 'Note 4',
-				narrative: 'Narrative 4'
+				title: 'Coos bay',
+				narrative: '43.37261, -124.218664',
+				id: 'Coos Bay'
 			},
 			{
-				title: 'Note 5',
-				narrative: 'Narrative 5'
+				title: 'Bandon',
+				narrative: '43.115167, -124.409552',
+				id: 'Bandon'
 			},
 			{
 				title: 'Note 6',

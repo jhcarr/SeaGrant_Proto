@@ -24,7 +24,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 					
 					{
 						title: 'List View',
-						iconCls: 'user',
+						iconCls: 'list',
 						config: {
 							scrollable: {
 								direction: 'vertical',

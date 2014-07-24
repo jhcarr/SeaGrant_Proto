@@ -48,6 +48,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		console.log("in detail view");
 	},
 	onViewListItemCommand: function(record){
+		Ext.Msg.alert(''+ record + ', this is it');
 		console.log("onViewListItemCommand");
 		var detailView = this.getDetailView();
 		detailView.setRecord(record);
