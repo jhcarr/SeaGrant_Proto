@@ -1,11 +1,14 @@
 Ext.define('SeaGrant_Proto.view.Detail', {
 	extend: 'Ext.Carousel',
+	requires: 'Ext.MessageBox',
 	alias: 'widget.detail',
 	fullscreen: true,
 	config: {
 		defaults: {
 			styleHtmlContent: true,
-			//cls: 'card'
+			title: ''+this.record+'',
+			tpl: 'Hello'
+			
 		},
 		items: [
             {
@@ -29,7 +32,11 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 		// This declairs a bottom toolbar and buttons
 			{
 				xtype: 'toolbar',
-				itemTpl: '</pre><div class="list-item-title">{title}</div><div class="list-item-narrative">{narrative}</div><pre>',
+				text: '{title',
+				// styleHtmlContent: true,
+				// cls: 'storeName',
+				Tpl: '<div class="ListItemContent">{title}</div>',
+				// text: record,
 				docked: 'top'
 			},
 			{
@@ -74,8 +81,13 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 			}
 		]
 	},
-	onHomeButtonTap: function(list, record, target, index, evt, options){
+	// onPassingRecord: function(record){
+	// 	console.log('onPassingRecord');
+	// 	Ext.Msg.alert(''+ record + ', its cool');
+	// },
+	onHomeButtonTap: function(record, target, index, evt, options){
 		console.log('viewHomeCommand');
+		Ext.Msg.alert(''+ record + ', its cool');
 		this.fireEvent('viewHomeCommand', this, record);
 	},
 	onLocationButtonTap: function(list, record, target, index, evt, options){
