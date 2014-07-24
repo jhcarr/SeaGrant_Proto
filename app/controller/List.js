@@ -55,9 +55,9 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		// 	xtype: 'storeName',
 		// 	title: record.title(),
 		// 	data: record.data
-		// });
-		Ext.Msg.alert(''+ record + ', its cool');
-		this.fireEvent("passingRecord", record);
+		// // });
+		// Ext.Msg.alert(''+ record + ', its cool');
+		// this.fireEvent("passingRecord", record);
 		Ext.Viewport.animateActiveItem(detailView, this.slideLeftTransition);
 		
 		console.log("in detail view");
