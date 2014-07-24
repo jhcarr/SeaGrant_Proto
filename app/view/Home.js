@@ -29,12 +29,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 							scrollable: {
 								direction: 'vertical',
 								directionLock: true
-								// trying to set scroll bar always visible
-								// indicators: { 
-								// 	y: {
-								// 		autoHide: false
-								// 	}
-								// }
+	
 							}
 						},
 						xtype: 'list',
@@ -42,9 +37,6 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						itemId: 'homeList',
 						loadingText: 'Loading Notes ...',
 						emptyText: '</pre><div class="\&quot;notes-list-empty-text\&quot;">No notes found.</div><pre>',
-						// onItemDisclosure: true,
-						// onItemTap: true,
-						// grouped: true,
 						itemTpl: '</pre><div class="list-item-title">{title}</div><div class="list-item-narrative">{narrative}</div><pre>'
 					},
 					{
@@ -88,6 +80,11 @@ Ext.define('SeaGrant_Proto.view.Home', {
 				delegate: '#submitButton',
 				event: 'tap',
 				fn: 'onSubmitButtonTap'
+			},
+			{
+				delegate: '#homeList',
+				event: 'itemtap',
+				fn: 'onHomeListDisclose'
 			}
 		]
 	},
