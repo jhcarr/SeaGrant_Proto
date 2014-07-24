@@ -1,6 +1,6 @@
 Ext.define('SeaGrant_Proto.view.Home', {
 	extend: 'Ext.Container',
-	requires: ['Ext.form.FieldSet', 'Ext.TabPanel', 'Ext.dataview.List', 'Ext.MessageBox'],
+	requires: ['Ext.form.FieldSet', 'Ext.TabPanel', 'Ext.dataview.List', 'Ext.MessageBox', 'SeaGrant_Proto.view.Map'],
 	xtype: 'Home',
 	alias: 'widget.home',
 	config: {
@@ -13,6 +13,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 				title: 'Whats Fresh?',
 				docked: 'top'
 			},
+
 			{
 				xtype: 'tabpanel',			
 				tabBarPosition: 'bottom',
@@ -27,7 +28,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						config: {
 							scrollable: {
 								direction: 'vertical',
-								directionLock: true,
+								directionLock: true
 								// trying to set scroll bar always visible
 								// indicators: { 
 								// 	y: {
@@ -49,17 +50,18 @@ Ext.define('SeaGrant_Proto.view.Home', {
 					{
 						title: 'Map View',
 						iconCls: 'home',
-						html: 'Map View'
+						xtype:'SeaGrantMap'
 					}
 				]
 			},	
-			{
-				html:'Filter by City or Product:'
-			},
+			
 			{
 				xtype: 'fieldset',
 				itemId: 'filter',
-				items: [					
+				items: [	
+					{
+						html:'Filter by City or Product'
+					},			
 					{
 						xtype: 'textfield',
 						name: 'city',
@@ -75,7 +77,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						ui: 'go',
 						text: 'Submit',
 						itemId: 'submitButton'
-					},
+					}
 					
 				]
 			}
