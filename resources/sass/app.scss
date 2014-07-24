@@ -6,5 +6,37 @@
 
 // Custom code goes here..
 
+.x-inner .x-form-fieldset-inner{
+	margin-top: 20px;
+	color: red;
+	max-height: 130px;
+}
+#ext-container-1{
+	margin-top: 180px;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	background-color: orange;
+}
+
+#ext-container-2{
+	margin-top: 180px;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 20px;
+	background-color: green;
+}
+#ext-fieldset-1{
+	max-height: 130px;
+}
+#ext-element-50{
+	max-height: 130px;
+}
+#ext-container-3{
+	max-height: 130px;
+}
+
 // Examples of using the icon mixin:
 // @include icon('user');
