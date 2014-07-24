@@ -1,5 +1,7 @@
 Ext.define('SeaGrant_Proto.controller.List', {
 	extend: 'Ext.app.Controller',
+	requires: 'Ext.MessageBox',
+	alias: 'cont',
 	config: {
 		refs: {
 			homeView: 'home',
@@ -49,7 +51,15 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		console.log("onViewListItemCommand");
 		var detailView = this.getDetailView();
 		detailView.setRecord(record);
+		// this.getDetailView().push({
+		// 	xtype: 'storeName',
+		// 	title: record.title(),
+		// 	data: record.data
+		// });
+		Ext.Msg.alert(''+ record + ', its cool');
+		this.fireEvent("passingRecord", record);
 		Ext.Viewport.animateActiveItem(detailView, this.slideLeftTransition);
+		
 		console.log("in detail view");
 	},
 	launch: function(){
