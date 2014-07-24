@@ -49,7 +49,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 					},
 					{
 						title: 'Map View',
-						iconCls: 'home',
+						iconCls: 'maps',
 						xtype:'SeaGrantMap'
 					}
 				]
