@@ -1,5 +1,5 @@
 Ext.define('SeaGrant_Proto.view.Home', {
-	extend: 'Ext.Container',
+	extend: 'Ext.Panel',
 	requires: ['Ext.form.FieldSet', 'Ext.TabPanel', 'Ext.dataview.List', 'Ext.MessageBox', 'SeaGrant_Proto.view.Map'],
 	xtype: 'Home',
 	alias: 'widget.home',
@@ -81,58 +81,9 @@ Ext.define('SeaGrant_Proto.view.Home', {
 					
 				]
 			}
-			// This declairs a bottom toolbar and buttons
-			// {
-			// 	xtype: 'toolbar',
-			// 	docked: 'bottom',
-			// 	items: [
-			// 		{
-			// 			xtype: 'spacer'
-			// 		},
-			// 		{
-			// 			xtype: 'button',
-			// 			ui: 'action',
-			// 			text: 'Map View',
-			// 			itemId: 'mapButton'
-			// 		},
-			// 		{
-			// 			xtype: 'spacer'
-			// 		},
-			// 		{
-			// 			xtype: 'button',
-			// 			ui: 'action',
-			// 			text: 'List View',
-			// 			itemId: 'listButton'
-			// 		},
-			// 		{
-			// 			xtype: 'spacer'
-			// 		}
-			// 	]
-			// }
+		
 		],
 		listeners: [
-			// Bottom button listeners
-			// {
-			// 	delegate: '#mapButton',
-			// 	event: 'tap',
-			// 	fn: 'onMapButtonTap's
-			// },
-			// {
-			// 	delegate: '#listButton',
-			// 	event: 'tap',
-			// 	fn: 'onListButtonTap'
-			// },
-			// This listener is used to get an event when a list item is selected
-			{
-				delegate: '#homeList',
-				event: 'itemtap',
-				fn: 'onHomeListDisclose'
-			},
-			// {
-			// 	delegate: '#homeList',
-			// 	event: 'disclose',
-			// 	fn: 'onHomeListDisclose'
-			// },
 			{
 				delegate: '#submitButton',
 				event: 'tap',
@@ -143,19 +94,10 @@ Ext.define('SeaGrant_Proto.view.Home', {
 	onHomeListDisclose: function(list, record, target, index, evt, options){
 		console.log('viewListItemCommand');
 		this.fireEvent("viewListItemCommand", record);
-		// Ext.Msg.alert('list item chosen '+ record + ' its cool');
 	},
 	onSubmitButtonTap: function(){
 		console.log('onSubmitButtonTap');
 		this.fireEvent("onSubmitButtonTap");
 	}
-	// onListButtonTap: function(){
-	// 	console.log("onListButtonTap");
-	// 	this.fireEvent("onListButtonTap", this);
-	// },
-	// onMapButtonTap: function(){
-	// 	console.log("onMapButtonTap");
-	// 	this.fireEvent("onMapButtonTap", this);
-	// }
 
 });

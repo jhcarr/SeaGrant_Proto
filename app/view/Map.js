@@ -29,8 +29,8 @@ Ext.define('SeaGrant_Proto.view.Map', {
         var mapPanel = this.down('map');
         var gMap = mapPanel.getMap();
  
-        var panoramioLayer = new google.maps.panoramio.PanoramioLayer();
-        panoramioLayer.setMap(gMap);
+        // var panoramioLayer = new google.maps.panoramio.PanoramioLayer();
+        // panoramioLayer.setMap(gMap);
  
         var marker = new google.maps.Marker({
             map: gMap,
