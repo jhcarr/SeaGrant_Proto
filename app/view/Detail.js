@@ -3,38 +3,38 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 	requires: 'Ext.MessageBox',
 	alias: 'widget.detail',
 	fullscreen: true,
-	config: {
-		refs: {
-			cont: 'cont'
-		},
-		control: {
-			cont: {
-				passingRecord: 'onPassingRecord'
-			}
-		}
-	},
+	// config: {
+	// 	refs: {
+	// 		cont: 'cont'
+	// 	},
+	// 	control: {
+	// 		cont: {
+	// 			passingRecord: 'onPassingRecord'
+	// 		}
+	// 	}
+	// },
 	config: {
 		defaults: {
 			styleHtmlContent: true,
-			title: ''+this.record+'',
-			tpl: 'Hello'
+			title: ''+this.record+''
+			// tpl: 'Hello'
 			
 		},
 		items: [
             {
-                html: 'red',
+                html: 'Company Details',
                 style: 'background-color:#f00;'
             }, {
-                html: 'orange',
+                html: 'Products',
                 style: 'background-color:#ffb600;'
             }, {
-                html: 'yellow',
+                html: 'History',
                 style: 'background-color:#ff0;'
             }, {
-                html: 'green',
+                html: 'Awards',
                 style: 'background-color:#80ff4d;'
             }, {
-                html: 'blue',
+                html: 'Fun Facts',
                 style: 'background-color:#009dff;'
             },
  //        ] // items
@@ -97,7 +97,14 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 	// },
 	onHomeButtonTap: function(list, record, target, index, evt, options){
 		console.log('viewHomeCommand');
-		Ext.Msg.alert(''+ record+ ', its cool');
+		// var details = Ext.create()
+		console.log(list);
+		console.log(record);
+		console.log(target);
+		console.log(index);
+		console.log(evt);
+		console.log(options);
+		Ext.Msg.alert(''+ index.data+ ', its cool');
 		this.fireEvent('viewHomeCommand', this, record);
 	},
 	onLocationButtonTap: function(list, record, target, index, evt, options){

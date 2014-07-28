@@ -90,7 +90,14 @@ Ext.define('SeaGrant_Proto.view.Home', {
 	},
 	onHomeListDisclose: function(list, record, target, index, evt, options){
 		console.log('viewListItemCommand');
-		this.fireEvent("viewListItemCommand", record);
+		console.log(list);
+		console.log(record);
+		console.log(target);
+		console.log(index);
+		console.log(evt);
+		console.log(options);
+		// Ext.Msg.alert(''+ index.data.title + ', this is it');
+		this.fireEvent("viewListItemCommand", this, record, index);
 	},
 	onSubmitButtonTap: function(){
 		console.log('onSubmitButtonTap');
