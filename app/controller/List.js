@@ -17,7 +17,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 				viewLocationCommand: 'onViewLocationCommand'
 			},
 			locationView: {
-				// Note we us this command because it points to the 
+				// Note we use this command because it points to the 
 				// same view as the list select. You can think of it
 				// as viewDetailcommand from location view.
 				viewDetailCommand: 'onViewDetailCommand',
@@ -47,20 +47,17 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		Ext.Viewport.animateActiveItem(this.getDetailView(), this.slideRightTransition);
 		console.log("in detail view");
 	},
-	onViewListItemCommand: function(record, list, index){
-		// Ext.Msg.alert(''+ list.title + ', this is it');
-		Ext.Msg.alert(''+ index.data.id + ', listviewcommand');
+	onViewListItemCommand: function(record){
 		console.log("onViewListItemCommand");
 		var detailView = this.getDetailView();
 		detailView.setRecord(record);
-		// detailView.setIndex(index);
 		// this.getDetailView().push({
 		// 	xtype: 'storeName',
 		// 	title: record.title(),
 		// 	data: record.data
-		// // });
-		// Ext.Msg.alert(''+ record + ', its cool');
-		this.fireEvent("passingRecord", record, index);
+		// });
+		Ext.Msg.alert(''+ record + ', its cool');
+		this.fireEvent("passingRecord", record);
 		Ext.Viewport.animateActiveItem(detailView, this.slideLeftTransition);
 		
 		console.log("in detail view");
