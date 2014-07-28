@@ -10,8 +10,8 @@ Ext.define('SeaGrant_Proto.view.Map', {
             {
                 xtype: 'map',
                 mapOptions: {
-                    center: new google.maps.LatLng(44.638477,-124.060546),
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    // center: new google.maps.LatLng(44.638477,-124.060546),
+                    // mapTypeId: google.maps.MapTypeId.ROADMAP,
                     zoom: 15
                 }
             }

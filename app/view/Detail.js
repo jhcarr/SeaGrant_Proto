@@ -16,7 +16,8 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 	config: {
 		defaults: {
 			styleHtmlContent: true,
-			title: ''+this.record+''
+
+			// title: 'Details'
 			// tpl: 'Hello'
 			
 		},
@@ -41,7 +42,8 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 	// },
 		// This declairs a bottom toolbar and buttons
 			{
-				xtype: 'toolbar',
+				xtype: 'titlebar',
+				title: 'Details',
 				// text: '{title',
 				// styleHtmlContent: true,
 				// cls: 'storeName',
@@ -62,6 +64,15 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 						text: 'Home',
 						itemId: 'homeButton'
 					},
+					// {
+					// 	xtype: 'spacer'
+					// },
+					// {
+					// 	xtype: 'button',
+					// 	ui: 'action',
+					// 	text: 'index',
+					// 	itemId: 'indexButton'
+					// },
 					{
 						xtype: 'spacer'
 					},
@@ -84,6 +95,11 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 				event: 'tap',
 				fn: 'onHomeButtonTap'
 			},
+			// {
+			// 	delegate: '#indexButton',
+			// 	event: 'tap',
+			// 	fn: 'onIndexButtonTap'
+			// },
 			{
 				delegate: '#locationButton',
 				event: 'tap',
@@ -91,21 +107,24 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 			}
 		]
 	},
-	// onPassingRecord: function(record){
+	// onIndexButtonTap: function(record, index){
 	// 	console.log('onPassingRecord');
-	// 	Ext.Msg.alert(''+ record + ', its cool');
+	// 	console.log(record);
+	// 	console.log(index);
+		
 	// },
+
 	onHomeButtonTap: function(list, record, target, index, evt, options){
 		console.log('viewHomeCommand');
 		// var details = Ext.create()
-		console.log(list);
-		console.log(record);
-		console.log(target);
+		// console.log(list);
+		// console.log(record);
+		console.log("home button index");
 		console.log(index);
-		console.log(evt);
-		console.log(options);
-		Ext.Msg.alert(''+ index.data+ ', its cool');
-		this.fireEvent('viewHomeCommand', this, record);
+		// console.log(evt);
+		// console.log(options);
+		// Ext.Msg.alert(''+ index.data+ ', its cool');
+		this.fireEvent('viewHomeCommand', this, record, index);
 	},
 	onLocationButtonTap: function(list, record, target, index, evt, options){
 		console.log('viewLocationCommand');

@@ -37,7 +37,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						itemId: 'homeList',
 						loadingText: 'Loading Notes ...',
 						emptyText: '</pre><div class="\&quot;notes-list-empty-text\&quot;">No notes found.</div><pre>',
-						itemTpl: '</pre><div class="list-item-title">{title}</div><div class="list-item-narrative">{narrative}</div><pre>'
+						itemTpl: '</pre><div class="list-item-title">{title}</div><div class="list-item-Latlng">{Latlng}</div><pre>'
 					},
 					{
 						title: 'Map View',
@@ -90,12 +90,12 @@ Ext.define('SeaGrant_Proto.view.Home', {
 	},
 	onHomeListDisclose: function(list, record, target, index, evt, options){
 		console.log('viewListItemCommand');
-		console.log(list);
-		console.log(record);
-		console.log(target);
+		// console.log(list);
+		// console.log(record);
+		console.log("list index");
 		console.log(index);
-		console.log(evt);
-		console.log(options);
+		// console.log(evt);
+		// console.log(options);
 		// Ext.Msg.alert(''+ index.data.title + ', this is it');
 		this.fireEvent("viewListItemCommand", this, record, index);
 	},
