@@ -31,11 +31,11 @@ Ext.define('SeaGrant_Proto.view.Map', {
         // var panoramioLayer = new google.maps.panoramio.PanoramioLayer();
         // panoramioLayer.setMap(gMap);
         
-        var marker = new google.maps.Marker({
-            map: map,
-            animation: google.maps.Animation.DROP,
-            position: new google.maps.LatLng(44.638477,-124.060546)
-        });
+        // var marker = new google.maps.Marker({
+        //     map: map,
+        //     animation: google.maps.Animation.DROP,
+        //     position: new google.maps.LatLng(44.638477,-124.060546)
+        // });
  
     }
     
