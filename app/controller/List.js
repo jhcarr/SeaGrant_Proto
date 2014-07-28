@@ -47,18 +47,20 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		Ext.Viewport.animateActiveItem(this.getDetailView(), this.slideRightTransition);
 		console.log("in detail view");
 	},
-	onViewListItemCommand: function(record){
-		Ext.Msg.alert(''+ record + ', this is it');
+	onViewListItemCommand: function(record, list, index){
+		// Ext.Msg.alert(''+ list.title + ', this is it');
+		Ext.Msg.alert(''+ index.data.id + ', listviewcommand');
 		console.log("onViewListItemCommand");
 		var detailView = this.getDetailView();
 		detailView.setRecord(record);
+		// detailView.setIndex(index);
 		// this.getDetailView().push({
 		// 	xtype: 'storeName',
 		// 	title: record.title(),
 		// 	data: record.data
 		// // });
 		// Ext.Msg.alert(''+ record + ', its cool');
-		// this.fireEvent("passingRecord", record);
+		this.fireEvent("passingRecord", record, index);
 		Ext.Viewport.animateActiveItem(detailView, this.slideLeftTransition);
 		
 		console.log("in detail view");

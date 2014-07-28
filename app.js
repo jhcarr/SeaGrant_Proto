@@ -22,13 +22,14 @@ Ext.application({
     name: 'SeaGrant_Proto',
     controllers: ["List"],
     stores: ["Info"],
-    views: ["Home", "Detail", "Location"],
+    views: ["Home", "Detail", "Location", "Map"],
 
     launch: function() {
         // Initialize the main view
         Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Home'));
-        // Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Detail'));
-        // Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Location'));
+        Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Detail'));
+        Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Location'));
+        Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Map'));
     }
 
    
