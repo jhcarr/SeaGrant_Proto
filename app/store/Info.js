@@ -34,32 +34,38 @@ Ext.define('SeaGrant_Proto.store.Info', {
 				id: 'Bandon'
 			},
 			{
-				title: 'Note 6',
-				Latlng: 'Narrative 6'
+				title: 'Gold Beach',
+				Latlng: '42.406302, -124.419420',
+				id: 'Gold Beach'
 			},
 			{
-				title: 'Note 7',
-				Latlng: 'Narrative 7'
+				title: 'Brookings',
+				Latlng: '42.051287, -124.283807',
+				id: 'Brookings'
 			},
 			{
-				title: 'Note 8',
-				Latlng: 'Narrative 8'
+				title: 'Depoe Bay',
+				Latlng: '44.809437, -124.059516',
+				id: 'Depoe Bay'
 			},
 			{
-				title: 'Note 9',
-				Latlng: 'Narrative 9'
+				title: 'Lincoln City',
+				Latlng: '44.957217, -124.014541',
+				id: 'Lincoln City'
 			},
 			{
-				title: 'Note 10',
-				Latlng: 'Narrative 10'
+				title: 'Tillamook',
+				Latlng: '45.455024, -123.846656',
+				id: 'Tillamook'
 			},
 			{
-				title: 'Note 11',
-				Latlng: 'Narrative 11'
+				title: 'Seaside',
+				Latlng: '45.991815, -123.922769',
+				id: 'Seaside'
 			},
 			{
-				title: 'Note 12',
-				Latlng: 'Narrative 12'
+				title: 'Astoria',
+				Latlng: '46.187831, -123.833543'
 			}
 		]
 		// model: 'SeaGrant_Proto.model.ListForm',

@@ -1,31 +1,32 @@
 Ext.define('SeaGrant_Proto.view.Detail', {
 	extend: 'Ext.Carousel',
-	requires: 'Ext.MessageBox',
+	requires: ['Ext.MessageBox', 'Ext.dataview.List'],
 	alias: 'widget.detail',
 	fullscreen: true,
-	// config: {
-	// 	refs: {
-	// 		cont: 'cont'
-	// 	},
-	// 	control: {
-	// 		cont: {
-	// 			passingRecord: 'onPassingRecord'
-	// 		}
-	// 	}
-	// },
 	config: {
 		defaults: {
-			styleHtmlContent: true,
-
-			// title: 'Details'
-			// tpl: 'Hello'
-			
+			styleHtmlContent: true
 		},
 		items: [
             {
                 html: 'Company Details',
                 style: 'background-color:#f00;'
-            }, {
+            },
+      //       {
+	     //        config: {
+						// 	scrollable: {
+						// 		direction: 'vertical',
+						// 		directionLock: true	
+						// 	}
+						// },
+						// xtype: 'list',
+						// store: 'Info',
+						// itemId: 'homeList',
+						// loadingText: 'Loading Notes ...',
+						// emptyText: '</pre><div class="\&quot;notes-list-empty-text\&quot;">No notes found.</div><pre>',
+						// itemTpl: '</pre><div class="list-item-title">{title}</div><div class="list-item-Latlng">{Latlng}</div><pre>'
+      //       }, 
+            {
                 html: 'Products',
                 style: 'background-color:#ffb600;'
             }, {
@@ -38,17 +39,9 @@ Ext.define('SeaGrant_Proto.view.Detail', {
                 html: 'Fun Facts',
                 style: 'background-color:#009dff;'
             },
- //        ] // items
-	// },
-		// This declairs a bottom toolbar and buttons
+			// This declairs a bottom toolbar and buttons
 			{
 				xtype: 'titlebar',
-				title: 'Details',
-				// text: '{title',
-				// styleHtmlContent: true,
-				// cls: 'storeName',
-				// Tpl: '<div class="ListItemContent">{title}</div>',
-				// text: record,
 				docked: 'top'
 			},
 			{
@@ -64,15 +57,6 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 						text: 'Home',
 						itemId: 'homeButton'
 					},
-					// {
-					// 	xtype: 'spacer'
-					// },
-					// {
-					// 	xtype: 'button',
-					// 	ui: 'action',
-					// 	text: 'index',
-					// 	itemId: 'indexButton'
-					// },
 					{
 						xtype: 'spacer'
 					},
@@ -95,11 +79,6 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 				event: 'tap',
 				fn: 'onHomeButtonTap'
 			},
-			// {
-			// 	delegate: '#indexButton',
-			// 	event: 'tap',
-			// 	fn: 'onIndexButtonTap'
-			// },
 			{
 				delegate: '#locationButton',
 				event: 'tap',
@@ -107,23 +86,10 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 			}
 		]
 	},
-	// onIndexButtonTap: function(record, index){
-	// 	console.log('onPassingRecord');
-	// 	console.log(record);
-	// 	console.log(index);
-		
-	// },
-
 	onHomeButtonTap: function(list, record, target, index, evt, options){
 		console.log('viewHomeCommand');
-		// var details = Ext.create()
-		// console.log(list);
-		// console.log(record);
 		console.log("home button index");
 		console.log(index);
-		// console.log(evt);
-		// console.log(options);
-		// Ext.Msg.alert(''+ index.data+ ', its cool');
 		this.fireEvent('viewHomeCommand', this, record, index);
 	},
 	onLocationButtonTap: function(list, record, target, index, evt, options){
