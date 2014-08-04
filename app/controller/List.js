@@ -48,24 +48,14 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		console.log("in detail view");
 	},
 	onViewListItemCommand: function(record, list, index){
-		// Ext.Msg.alert(''+ list.title + ', this is it');
 		console.log("Controller index");
-		// console.log(list);
 		console.log(index);
 		var newTitle = index.data.title;
-		Ext.Msg.alert(''+ index.data.title + ', listviewcommand');
+		// Ext.Msg.alert(''+ index.data.title + ', listviewcommand');
 		console.log("onViewListItemCommand");
 		var detailView = this.getDetailView();
 		detailView.setRecord(record);
 		Ext.ComponentQuery.query('titlebar')[0].setTitle(newTitle);
-		// detailView.setIndex(index);
-		// this.getDetailView().push({
-		// 	xtype: 'storeName',
-		// 	title: record.title(),
-		// 	data: record.data
-		// // });
-		// Ext.Msg.alert(''+ record + ', its cool');
-		this.fireEvent("passingRecord", record, newTitle);
 		Ext.Viewport.animateActiveItem(detailView, this.slideLeftTransition);
 		
 		console.log("in detail view");

@@ -13,23 +13,20 @@ Ext.define('SeaGrant_Proto.view.Home', {
 				title: 'Whats Fresh?',
 				docked: 'top'
 			},
-
 			{
 				xtype: 'tabpanel',			
 				tabBarPosition: 'bottom',
 				defaults: {
 					styleHtmlContext: true
 				},
-				items:[
-					
+				items:[					
 					{
 						title: 'List View',
 						iconCls: 'list',
 						config: {
 							scrollable: {
 								direction: 'vertical',
-								directionLock: true
-	
+								directionLock: true	
 							}
 						},
 						xtype: 'list',
@@ -45,8 +42,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						xtype:'SeaGrantMap'
 					}
 				]
-			},	
-			
+			},				
 			{
 				xtype: 'fieldset',
 				itemId: 'filter',
@@ -90,18 +86,13 @@ Ext.define('SeaGrant_Proto.view.Home', {
 	},
 	onHomeListDisclose: function(list, record, target, index, evt, options){
 		console.log('viewListItemCommand');
-		// console.log(list);
-		// console.log(record);
 		console.log("list index");
 		console.log(index);
-		// console.log(evt);
-		// console.log(options);
-		// Ext.Msg.alert(''+ index.data.title + ', this is it');
 		this.fireEvent("viewListItemCommand", this, record, index);
 	},
 	onSubmitButtonTap: function(){
 		console.log('onSubmitButtonTap');
+		Ext.Msg.alert('Sorting future list data');
 		this.fireEvent("onSubmitButtonTap");
 	}
-
 });
