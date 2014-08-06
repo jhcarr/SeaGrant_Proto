@@ -9,7 +9,9 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 		},
 		items: [
             {
-                html: 'Company Details',
+                // html: 'Company Details',
+                tpl: ['<div class="name">{title}</div>',
+                '<div class="id">{id}</div>'].join(''),
                 style: 'background-color:#f00;'
             },
       //       {
@@ -28,9 +30,11 @@ Ext.define('SeaGrant_Proto.view.Detail', {
       //       }, 
             {
                 html: 'Products',
+                tpl: '<div class="products">{products}</div>',
                 style: 'background-color:#ffb600;'
             }, {
                 html: 'History',
+                tpl:'<div class="history">{desc}</div>',
                 style: 'background-color:#ff0;'
             }, {
                 html: 'Awards',
@@ -39,7 +43,7 @@ Ext.define('SeaGrant_Proto.view.Detail', {
                 html: 'Fun Facts',
                 style: 'background-color:#009dff;'
             },
-			// This declairs a bottom toolbar and buttons
+			// This declairs the title and toolbar as well as navigation buttons
 			{
 				xtype: 'titlebar',
 				docked: 'top'
@@ -76,7 +80,7 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 			// Bottom button listeners
 			{
 				delegate: '#homeButton',
-				event: 'tap',
+				event: 'tap', 
 				fn: 'onHomeButtonTap'
 			},
 			{

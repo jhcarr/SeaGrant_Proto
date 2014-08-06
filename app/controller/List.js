@@ -17,9 +17,6 @@ Ext.define('SeaGrant_Proto.controller.List', {
 				viewLocationCommand: 'onViewLocationCommand'
 			},
 			locationView: {
-				// Note we us this command because it points to the 
-				// same view as the list select. You can think of it
-				// as viewDetailcommand from location view.
 				viewDetailCommand: 'onViewDetailCommand',
 				viewHomeCommand: 'onViewHomeCommand'
 			}
@@ -50,14 +47,18 @@ Ext.define('SeaGrant_Proto.controller.List', {
 	onViewListItemCommand: function(record, list, index){
 		console.log("Controller index");
 		console.log(index);
+		// Set title to list item title
 		var newTitle = index.data.title;
-		// Ext.Msg.alert(''+ index.data.title + ', listviewcommand');
-		console.log("onViewListItemCommand");
-		var detailView = this.getDetailView();
-		detailView.setRecord(record);
 		Ext.ComponentQuery.query('titlebar')[0].setTitle(newTitle);
+		console.log("onViewListItemCommand");
+		// Set data for each item in carousel
+		var detailView = this.getDetailView();
+		console.log('length: ', detailView.carouselItems.length);
+        for(var i = 1; i <= detailView.carouselItems.length; i++){
+        	detailView.getAt(i).setData(index.getData());
+      	}
+      	// Setting the active viewport
 		Ext.Viewport.animateActiveItem(detailView, this.slideLeftTransition);
-		
 		console.log("in detail view");
 	},
 	launch: function(){
