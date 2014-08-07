@@ -773,6 +773,7 @@ Ext.ClassManager.addNameAlternateMappings({
     "Ext.viewport.WP"
   ],
   "SeaGrant_Proto.controller.List": [],
+  "SeaGrant_Proto.model.City": [],
   "SeaGrant_Proto.store.Info": [],
   "SeaGrant_Proto.view.Detail": [],
   "SeaGrant_Proto.view.Home": [],
@@ -1725,6 +1726,7 @@ Ext.ClassManager.addNameAliasMappings({
   "SeaGrant_Proto.controller.List": [
     "cont"
   ],
+  "SeaGrant_Proto.model.City": [],
   "SeaGrant_Proto.store.Info": [],
   "SeaGrant_Proto.view.Detail": [
     "widget.detail"

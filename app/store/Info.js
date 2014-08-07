@@ -7,6 +7,7 @@ Ext.define('SeaGrant_Proto.store.Info', {
 				title: 'Newport',
 				Latlng: '44.634115, -124.062796',
 				id: '1', 
+				address: '',
 				products: 'crab, shrimp, cod',
 				desc: ["Newport, Oregon - the Dungeness Crab Capital of the world! And much, much more! Bring your surfboard, bicycle, hiking boots, and binoculars.",
 				"Newport is a historic city that caters to residents and visitors of all ages and interests. It is a city comprised of distinct neighborhoods including Agate Beach where you can visit the Yaquina Head Lighthouse, surf, or go clamming; Nye Beach where you can walk the beach and visit an incredibly eclectic array of shops, restaurants, and lodging establishments; the Deco District which is Newports downtown and contains art deco buildings; the historic Bayfront which is a working fishing port and home to a variety of shops, restaurants, and lodging establishments, and located downhill from Newports other lighthouse, the Yaquina Bay Lighthouse; and South Beach which is home to the Oregon Coast Aquarium, the Hatfield Marine Science Center, and boat launch and fishing opportunities. Because of these attributes, Newport is often described as the most authentic city on the entire Oregon Coast.",
