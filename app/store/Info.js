@@ -1,9 +1,21 @@
 Ext.define('SeaGrant_Proto.store.Info', {
 	extend: 'Ext.data.Store',
 	// requires: 'Ext.data.proxy.LocalStorage',
+	// id: 'thisStuff',
 	config: {
+		storeId: 'stuff',
+		// fields: [
+  //          {
+  //               name: 'id'
+  //           },
+  //           {
+  //               name: 'title'
+  //           }
+  //       ],
 		data: [
 			{
+				text: "item 1 of stuff",
+				value: '1',
 				title: 'Newport',
 				Latlng: '44.634115, -124.062796',
 				id: '1', 
@@ -14,6 +26,8 @@ Ext.define('SeaGrant_Proto.store.Info', {
 				"Whatever your interest, a warm coastal welcome awaits you in historic Newport."].join("")
 			},
 			{
+				text: "item 2 of stuff",
+				value: '2',
 				title: 'Waldport',
 				Latlng: '44.30737, -124.066572',
 				id: '2',
@@ -21,6 +35,8 @@ Ext.define('SeaGrant_Proto.store.Info', {
 				desc: ["Waldport is one of those special places. Located about three hours by car south of Portland, this town of 2050 offers everything you need to escape the rush and congestion of city living. Moderate year around temperatures rarely dip below freezing. Summer days are in the 70s and the yearly average is 51 degrees, Annual rainfall is about 61 inches. When the tide goes out you can dig clams, rake crabs or comb the beach. Down the road a few miles there is a place out of Lost Horizons - rocks covered with mussels to be gathered, starfish of every hue and color, driftwood that takes on every shape your imagination allows, and a sunset better than any Fourth of July fireworks display. The relative obscurity of Waldport is part of its charm. Here is a quiet city on the beautiful Oregon Coast, offering miles of unspoiled beaches; here is salmon, trout and surf fishing at its best. There is also a nine-hole golf course located in the hills near town. Here is relaxation with a capital R. The beach in the summer, fall, winter and spring is host to beachcombers, joggers, kite flyers, picnickers, horseback riders and many other recreational users. Once known as the beachcombers paradise, the beaches along the coast here are simply some of the cleanest, nicest and most beautiful in America. While enjoying, feel free to comb for driftwood, glass floats, rocks and shells. Also help us preserve our beaches by removing trash and never harming or disturbing wildlife. Although some creatures, like starfish, seem abundant, their numbers are fading and we must preserve the ones left. "]
 			},
 			{
+				text: "item 3 of stuff",
+				value: '3',
 				title: 'Florence',
 				Latlng: '43.976162, -124.106741',
 				id: '3',

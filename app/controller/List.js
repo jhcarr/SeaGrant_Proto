@@ -6,11 +6,18 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		refs: {
 			homeView: 'home',
 			detailView: 'detail',
-			locationView: 'location'
+			locationView: 'location',
+			listView: 'listview',
+			infoView: 'info',
+			specificView: 'specific'
 		},
 		control: {
 			homeView: {
-				viewListItemCommand: 'onViewListItemCommand'
+				viewGoCommand: 'onViewGoCommand'
+			},
+			listView: {
+				viewBackHomeCommand: 'onViewBackHomeCommand',
+				viewInfoCommand: 'onViewInfoCommand'
 			},
 			detailView: {
 				viewHomeCommand: 'onViewHomeCommand',
@@ -19,6 +26,13 @@ Ext.define('SeaGrant_Proto.controller.List', {
 			locationView: {
 				viewDetailCommand: 'onViewDetailCommand',
 				viewHomeCommand: 'onViewHomeCommand'
+			},
+			infoView: {
+				viewBackDetailCommand: 'onViewBackDetailCommand',
+				viewSpecificCommand: 'onViewSpecificCommand'
+			},
+			specificView: {
+				viewBackInfoCommand: 'onViewBackInfoCommand'
 			}
 		}
 	},
@@ -29,6 +43,36 @@ Ext.define('SeaGrant_Proto.controller.List', {
 	slideRightTransition: {
 		type: 'slide',
 		direction: 'right'
+	},
+	onViewGoCommand: function(){
+		console.log('In controller: onViewGoCommand');
+		Ext.Viewport.animateActiveItem(this.getListView(), this.slideLeftTransition);
+		console.log('go to list page');
+	},
+	onViewInfoCommand: function(){
+		console.log('In controller: onViewInfoCommand');
+		Ext.Viewport.animateActiveItem(this.getInfoView(), this.slideLeftTransition);
+		console.log('go to Info page');
+	},
+	onViewBackHomeCommand: function(){
+		console.log('In controller: onViewBackHomeCommand');
+		Ext.Viewport.animateActiveItem(this.getHomeView(), this.slideRightTransition);
+		console.log('back to home page');
+	},
+	onViewSpecificCommand: function(){
+		console.log('In controller: onViewSpecificCommand');
+		Ext.Viewport.animateActiveItem(this.getSpecificView(), this.slideLeftTransition);
+		console.log('go to Specific page');
+	},
+	onViewBackDetailCommand: function(){
+		console.log('In controller: onViewBackDetailCommand');
+		Ext.Viewport.animateActiveItem(this.getListView(), this.slideRightTransition);
+		console.log('back to detail page');
+	},
+	onViewBackInfoCommand: function(){
+		console.log('In controller: onViewBackInfoCommand');
+		Ext.Viewport.animateActiveItem(this.getInfoView(), this.slideRightTransition);
+		console.log('back to info page');
 	},
 	onViewLocationCommand: function(){
 		console.log('onViewLocationCommand');
