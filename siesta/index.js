@@ -5,17 +5,29 @@ Harness.configure({
 
     preload     : [
         '../touch/resources/css/sencha-touch.css',
-        // '../resources/yourproject-css-all.css',
+        '../resources/css/app.css',
 
+        
         '../touch/sencha-touch-all-debug.js'
-        // '../app/view/Home.js'
+        // 'http://maps.google.com/maps/api/js?sensor=true',
+        // '../app/view/Location.js',
+        // '../app/view/Map.js',
+        // '../app/view/ListView.js',
+        // '../app/view/Info.js',
+        // '../app/view/Specific.js',
+        // '../app/view/Home.js',
+        // '../app/view/Detail.js',
+        // '../app/controller/List.js',
+        // '../app/store/Info.js',
+        // '../app/model/City.js',
+        // '../app.js'
     ]
 });
 
 Harness.start(
     '010_sanity.t.js',
-    // 'home_test.t.js',
+    'home_test.t.js'
     // 'simple.t.js',
     // 'sane.t.js',
-    'HelloWorld.t.js'
+    // 'HelloWorld.t.js'
 );

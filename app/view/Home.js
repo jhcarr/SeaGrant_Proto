@@ -60,6 +60,7 @@
 
 Ext.define('SeaGrant_Proto.view.Home', {
 	extend: 'Ext.form.Panel',
+	require: ['Ext.field.Toggle', 'Ext.form.FieldSet', 'Ext.field.Select'],
     fullscreen: true,
     xtype: 'Home',
 	alias: 'widget.home',

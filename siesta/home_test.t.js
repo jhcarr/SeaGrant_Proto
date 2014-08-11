@@ -1,25 +1,13 @@
 StartTest(function(t) {
     t.diag("Home Page Tests");
 
-   t.ok('jafojfeijfkwjjo', 'This works');
-   	// t.click('#goButton');
+    t.ok('jafojfeijfkwjjo', 'This works');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // t.ok(toolbar, 'There is a toolbar');
-    // t.ok(button, 'A button is instantiated');
+    Ext.Loader.setPath({
+        'Ext.ux': '../app/view/Home'
+    });
+    console.log(toolbar);
+    console.log(selectfield);
     t.ok(togglefield, 'We have a togglefield for user location');
     // t.chain(
     // // {waitFor: 'EventsToRender', args:[]},
