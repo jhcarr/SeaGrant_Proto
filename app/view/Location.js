@@ -45,7 +45,7 @@
 
 Ext.define('SeaGrant_Proto.view.Location', {
 	extend: 'Ext.Container',
-	requires: 'SeaGrant_Proto.view.Map',
+	// requires: 'SeaGrant_Proto.view.Map',
 	alias: 'widget.location',
 	config: {
 		layout: {
@@ -57,9 +57,9 @@ Ext.define('SeaGrant_Proto.view.Location', {
 				title: 'Location',
 				docked: 'top'
 			},
-			{
-				xtype:'SeaGrantMap'
-			},
+			// {
+			// 	xtype:'SeaGrantMap'
+			// },
 			{
 				xtype: 'toolbar',
 				docked: 'bottom',

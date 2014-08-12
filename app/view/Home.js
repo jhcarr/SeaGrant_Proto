@@ -69,6 +69,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 			{
 				xtype: 'toolbar',
 				title: 'Whats Fresh?',
+				itemId: 'homePageToolbar',
 				docked: 'top'
 			},
 			{
@@ -81,6 +82,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 	            items: [
 	                {
 	                    xtype: 'selectfield',
+	                    itemId: '1',
 	                    label: 'Choose one',
 	                    options: [
 	                        {text: 'First Option',  value: 'first'},
@@ -90,7 +92,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 	                },
 	                {
 						xtype: 'selectfield',			
-						// itemId: 'id',
+						itemId: 'location',
 						label: 'Location',
 						// labelWrap: true,
 						// displayfield: 'id',
@@ -99,7 +101,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 					},				
 	                {
 						xtype: 'selectfield',			
-						// itemId: 'id',
+						itemId: 'product',
 						label: 'Product',
 						// labelWrap: true,
 						// displayfield: 'id',

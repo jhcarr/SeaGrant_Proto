@@ -11,13 +11,14 @@ Ext.define('SeaGrant_Proto.view.ListView', {
 			{
 				xtype: 'toolbar',
 				title: 'List Page',
+				itemId: 'listPageToolbar',
 				docked: 'top',
 				items: [
 					{
 						xtype: 'button',
 						ui: 'action',
 						text: 'back',
-						itemId: 'backButton'
+						itemId: 'backHomeButton'
 					},
 					{
 						xtype: 'button',
@@ -27,16 +28,16 @@ Ext.define('SeaGrant_Proto.view.ListView', {
 					}
 				]
 			},
-			{
-				xtype: 'SeaGrantMap'
-			},
+			// {
+			// 	xtype: 'SeaGrantMap'
+			// },
 			{
 
 			}
 		],
 		listeners: [
 			{
-				delegate: '#backButton',
+				delegate: '#backHomeButton',
 				event: 'tap',
 				fn: 'onBackButtonTap'
 			},

@@ -107,10 +107,10 @@ Ext.define('SeaGrant_Proto.controller.List', {
 	},
 	launch: function(){
 		this.callParent(arguments);
-		console.log("launch");
+		// console.log("launch");
 	},
 	init: function(){
 		this.callParent(arguments);
-		console.log("init");
+		// console.log("init");
 	}
 });

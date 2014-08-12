@@ -8,13 +8,14 @@ Ext.define('SeaGrant_Proto.view.Info', {
 			{
 				xtype: 'toolbar',
 				title: 'Info Page',
+				itemId: 'infoPageToolbar',
 				docked: 'top',
 				items: [
 					{
 						xtype: 'button',
 						ui: 'action',
 						text: 'back',
-						itemId: 'backButton'
+						itemId: 'backDetailButton'
 					},
 					{
 						xtype: 'button',
@@ -28,7 +29,7 @@ Ext.define('SeaGrant_Proto.view.Info', {
 		],
 		listeners: [
 			{
-				delegate: '#backButton',
+				delegate: '#backDetailButton',
 				event: 'tap',
 				fn: 'onBackButtonTap'
 			},
