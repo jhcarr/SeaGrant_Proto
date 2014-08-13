@@ -1,34 +1,25 @@
 Ext.define('SeaGrant_Proto.view.Detail', {
 	extend: 'Ext.Carousel',
-	requires: 'Ext.MessageBox',
+	requires: ['Ext.MessageBox', 'Ext.dataview.List'],
 	alias: 'widget.detail',
 	fullscreen: true,
-	// config: {
-	// 	refs: {
-	// 		cont: 'cont'
-	// 	},
-	// 	control: {
-	// 		cont: {
-	// 			passingRecord: 'onPassingRecord'
-	// 		}
-	// 	}
-	// },
 	config: {
 		defaults: {
-			styleHtmlContent: true,
-			title: ''+this.record+''
-			// tpl: 'Hello'
-			
+			styleHtmlContent: true
 		},
 		items: [
             {
-                html: 'Company Details',
+                // html: 'Company Details',
+                tpl: ['<div class="name">{title}</div>',
+                '<div class="id">{id}</div>'].join(''),
                 style: 'background-color:#f00;'
             }, {
                 html: 'Products',
+                tpl: '<div class="products">{products}</div>',
                 style: 'background-color:#ffb600;'
             }, {
                 html: 'History',
+                tpl:'<div class="history">{desc}</div>',
                 style: 'background-color:#ff0;'
             }, {
                 html: 'Awards',
@@ -37,16 +28,9 @@ Ext.define('SeaGrant_Proto.view.Detail', {
                 html: 'Fun Facts',
                 style: 'background-color:#009dff;'
             },
- //        ] // items
-	// },
-		// This declairs a bottom toolbar and buttons
+			// This declairs the title and toolbar as well as navigation buttons
 			{
-				xtype: 'toolbar',
-				// text: '{title',
-				// styleHtmlContent: true,
-				// cls: 'storeName',
-				// Tpl: '<div class="ListItemContent">{title}</div>',
-				// text: record,
+				xtype: 'titlebar',
 				docked: 'top'
 			},
 			{
@@ -81,7 +65,7 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 			// Bottom button listeners
 			{
 				delegate: '#homeButton',
-				event: 'tap',
+				event: 'tap', 
 				fn: 'onHomeButtonTap'
 			},
 			{
@@ -91,21 +75,11 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 			}
 		]
 	},
-	// onPassingRecord: function(record){
-	// 	console.log('onPassingRecord');
-	// 	Ext.Msg.alert(''+ record + ', its cool');
-	// },
 	onHomeButtonTap: function(list, record, target, index, evt, options){
 		console.log('viewHomeCommand');
-		// var details = Ext.create()
-		console.log(list);
-		console.log(record);
-		console.log(target);
+		console.log("home button index");
 		console.log(index);
-		console.log(evt);
-		console.log(options);
-		Ext.Msg.alert(''+ index.data+ ', its cool');
-		this.fireEvent('viewHomeCommand', this, record);
+		this.fireEvent('viewHomeCommand', this, record, index);
 	},
 	onLocationButtonTap: function(list, record, target, index, evt, options){
 		console.log('viewLocationCommand');

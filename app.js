@@ -21,8 +21,9 @@ Ext.Loader.setConfig({
 Ext.application({
     name: 'SeaGrant_Proto',
     controllers: ["List"],
-    stores: ["Info"],
-    views: ["Home", "Detail", "Location", "Map"],
+    models: ['City'],
+    stores: ["Info", "Education", "CountryStore"],
+    views: ["Home", "Detail", "Location", "ListView", "Map", "Info", "Specific"],
 
     launch: function() {
         // Initialize the main view
@@ -30,6 +31,9 @@ Ext.application({
         Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Detail'));
         Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Location'));
         Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Map'));
+        Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.ListView'));
+        Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Info'));
+        Ext.Viewport.add(Ext.create('SeaGrant_Proto.view.Specific'));
     }
 
    

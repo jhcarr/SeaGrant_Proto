@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /home/bsg/Devel/SeaGrant_Proto/app.js
+// @require /home/jacob/devel/SeaGrant_Proto/app.js
