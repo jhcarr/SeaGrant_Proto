@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### External Dependencies ###
 node_modules/*
 
@@ -16,6 +17,8 @@ build/*
 /build/temp/*
 >>>>>>> Introduce .gitignore and remove node_modules, /build/temp/ from git repo
 =======
+=======
+>>>>>>> 5c26bc7558c30c5382ded4afb27b44ce8288bafe
 ### External Dependencies ###
 /node_modules/*
 
@@ -26,5 +29,9 @@ build/*
 ### temp and log Files ###
 **/*.temp*
 **/*.log
+<<<<<<< HEAD
 **/*-log*
 >>>>>>> Format .gitignore file with github heuristics
+=======
+**/*-log*
+>>>>>>> 5c26bc7558c30c5382ded4afb27b44ce8288bafe
