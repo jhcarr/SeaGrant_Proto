@@ -1,107 +1,179 @@
+// Ext.define('SeaGrant_Proto.view.Home', {
+// 	extend: 'Ext.Panel',
+// 	requires: ['Ext.form.FieldSet', 'Ext.form.Panel', 'Ext.TabPanel', 'Ext.dataview.List', 'Ext.MessageBox', 'SeaGrant_Proto.view.Map'],
+// 	xtype: 'Home',
+// 	alias: 'widget.home',
+// 	config: {
+// 		// layout: {
+// 		// 	type: 'fit'
+// 		// },
+// 		items: [
+// 			{
+// 				xtype: 'toolbar',
+// 				title: 'Whats Fresh?',
+// 				docked: 'top'
+// 			},
+// 			{
+// 				xtype: 'selectfield',			
+// 				itemId: 'Country',
+// 				label: 'Location',
+// 				labelWrap: true,
+// 				displayField: 'name',
+// 				store: 'Countries',
+// 				valueField: 'id'
+// 			},
+// 			{
+// 				xtype: 'selectfield',			
+// 				itemId: 'id',
+// 				label: 'Product',
+// 				labelWrap: true,
+// 				displayField: 'id',
+// 				store: 'Countries',
+// 				valueField: 'id'
+// 			}		
+// 		],
+// 		listeners: [
+// 			{
+// 				delegate: '#Country',
+// 				event: 'change',
+// 				fn: 'onCountryChange'
+// 			},
+// 			{
+// 				delegate: '#State',
+// 				event: 'change',
+// 				fn: 'onStateChange'
+// 			}
+// 		]
+// 	},
+// 	onHomeListDisclose: function(list, record, target, index, evt, options){
+// 		console.log('viewListItemCommand');
+// 		console.log("list index");
+// 		console.log(index);
+// 		this.fireEvent("viewListItemCommand", this, record, index);
+// 	},
+// 	onSubmitButtonTap: function(){
+// 		console.log('onSubmitButtonTap');
+// 		Ext.Msg.alert('Sorting future list data');
+// 		this.fireEvent("onSubmitButtonTap");
+// 	}
+// }); 
+
 Ext.define('SeaGrant_Proto.view.Home', {
-	extend: 'Ext.Panel',
-	requires: ['Ext.form.FieldSet', 'Ext.TabPanel', 'Ext.dataview.List', 'Ext.MessageBox', 'SeaGrant_Proto.view.Map'],
-	xtype: 'Home',
+	extend: 'Ext.form.Panel',
+	require: ['Ext.field.Toggle', 'Ext.form.FieldSet', 'Ext.field.Select'],
+    fullscreen: true,
+    xtype: 'Home',
 	alias: 'widget.home',
 	config: {
-		layout: {
-			type: 'fit'
-		},
 		items: [
 			{
 				xtype: 'toolbar',
 				title: 'Whats Fresh?',
+				itemId: 'homePageToolbar',
 				docked: 'top'
 			},
-
 			{
-				xtype: 'tabpanel',			
-				tabBarPosition: 'bottom',
-				defaults: {
-					styleHtmlContext: true
-				},
-				items:[
-					
-					{
-						title: 'List View',
-						iconCls: 'list',
-						config: {
-							scrollable: {
-								direction: 'vertical',
-								directionLock: true
-	
-							}
-						},
-						xtype: 'list',
+				xtype: 'togglefield',
+				name: 'userlocation',
+				label: 'Use Current Locaton',
+				itemId: 'userlocation'
+			},
+	        {
+	            xtype: 'fieldset',
+	            items: [
+	                {
+	                    xtype: 'selectfield',
+	                    itemId: '1',
+	                    label: 'Choose one',
+	                    options: [
+	                        {text: 'First Option',  value: 'first'},
+	                        {text: 'Second Option', value: 'second'},
+	                        {text: 'Third Option',  value: 'third'}
+	                    ]
+	                },
+	                {
+						xtype: 'selectfield',			
+						itemId: 'location',
+						label: 'Location',
+						labelWrap: true,
+						displayField: 'id',
 						store: 'Info',
-						itemId: 'homeList',
-						loadingText: 'Loading Notes ...',
-						emptyText: '</pre><div class="\&quot;notes-list-empty-text\&quot;">No notes found.</div><pre>',
-						itemTpl: '</pre><div class="list-item-title">{title}</div><div class="list-item-narrative">{narrative}</div><pre>'
-					},
-					{
-						title: 'Map View',
-						iconCls: 'maps',
-						xtype:'SeaGrantMap'
-					}
-				]
-			},	
-			
-			{
-				xtype: 'fieldset',
-				itemId: 'filter',
-				items: [	
-					{
-						html:'Filter by City or Product'
-					},			
-					{
-						xtype: 'textfield',
-						name: 'city',
-						label: 'City'
-					},
-					{
-						xtype: 'textfield',
-						name: 'product',
-						label: 'Product'
-					},
-					{
-						xtype: 'button',
-						ui: 'go',
-						text: 'Submit',
-						itemId: 'submitButton'
-					}
-					
-				]
+						valueField: 'id'
+					},				
+	                {
+						xtype: 'selectfield',			
+						itemId: 'product',
+						label: 'Product',
+						labelWrap: true,
+						displayField: 'id',
+						store: 'Info',
+						valueField: 'id'
+					}					
+	            ]	                  
+	        },
+	        {
+	        	title: 'SortBy Two:',
+	        	items: [
+        	        {
+        	        	xtype: 'checkboxfield',
+	        			label: 'Vendors',
+	        			name: 'vendors',
+	        			inputValue: '1',
+	        			itemId: 'vendor'
+	        		},
+	        		{
+	        			xtype: 'checkboxfield',
+	        			label: 'Products',
+	        			name: 'products',
+	        			inputValue: '2',
+	        			itemId: 'product'
+	        		}
+		        ]
+	        },
+	        {
+				xtype: 'button',
+				ui: 'action',
+				text: 'Go',
+				itemId: 'goButton'
 			}
-		
-		],
-		listeners: [
+	    ],
+	    listeners: [
 			{
-				delegate: '#submitButton',
+				delegate: '#goButton',
 				event: 'tap',
-				fn: 'onSubmitButtonTap'
+				fn: 'onGoButtonTap'
 			},
 			{
-				delegate: '#homeList',
-				event: 'itemtap',
-				fn: 'onHomeListDisclose'
+				delegate: '#userlocation',
+				event: 'tap',
+				fn: 'onUseLocaion'
+			},
+			{
+				delegate: '#vendor',
+				event: 'tap',
+				fn: 'onVendorSelect'
+			},
+			{
+				delegate: '#product',
+				event: 'tap',
+				fn: 'onProductSelect'
 			}
-		]
+		]	      
 	},
-	onHomeListDisclose: function(list, record, target, index, evt, options){
-		console.log('viewListItemCommand');
-		console.log(list);
-		console.log(record);
-		console.log(target);
-		console.log(index);
-		console.log(evt);
-		console.log(options);
-		// Ext.Msg.alert(''+ index.data.title + ', this is it');
-		this.fireEvent("viewListItemCommand", this, record, index);
+	onUseLocaion: function(){
+		console.log('setUseLocation');
+		this.fireEvent('setUseLocation', this, record);
 	},
-	onSubmitButtonTap: function(){
-		console.log('onSubmitButtonTap');
-		this.fireEvent("onSubmitButtonTap");
+	onVendorSelect: function(){
+		console.log('sortByVendorCommand');
+		this.fireEvent('sortByVendorCommand', this, record);
+	},
+	onProductSelect: function(){
+		console.log('sortByProductCommand');
+		this.fireEvent('sortByProductCommand', this, record);
+	},
+	onGoButtonTap: function(list, record, target, index, evt, options){
+		console.log('viewGoCommand');
+		this.fireEvent('viewGoCommand', this, record);
 	}
-
 });

@@ -46,6 +46,7 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js",
   "Ext.draw.engine.SvgContext.Gradient": "touch/src/draw/engine/SvgContext.js",
+  "Ext.ux.DropDownButton": "app/view/DropDownButton.js",
   "SeaGrant_Proto": "app"
 });
 Ext.ClassManager.addNameAlternateMappings({
@@ -748,6 +749,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.ActionOverFlowMenuButton": [],
   "Ext.ux.ApplicationMenu": [],
   "Ext.ux.ContextMenu": [],
+  "Ext.ux.DropDownButton": [],
   "Ext.ux.MenuButton": [],
   "Ext.ux.TabMenuButton": [],
   "Ext.ux.device.Analytics": [],
@@ -773,12 +775,19 @@ Ext.ClassManager.addNameAlternateMappings({
     "Ext.viewport.WP"
   ],
   "SeaGrant_Proto.controller.List": [],
+  "SeaGrant_Proto.model.City": [],
+  "SeaGrant_Proto.store.CountryStore": [],
+  "SeaGrant_Proto.store.Education": [],
   "SeaGrant_Proto.store.Info": [],
+  "SeaGrant_Proto.store.StateStore": [],
   "SeaGrant_Proto.view.Detail": [],
   "SeaGrant_Proto.view.Home": [],
+  "SeaGrant_Proto.view.Info": [],
+  "SeaGrant_Proto.view.ListView": [],
   "SeaGrant_Proto.view.Location": [],
   "SeaGrant_Proto.view.Main": [],
-  "SeaGrant_Proto.view.Map": []
+  "SeaGrant_Proto.view.Map": [],
+  "SeaGrant_Proto.view.Specific": []
 });
 Ext.ClassManager.addNameAliasMappings({
   "Ext.AbstractComponent": [],
@@ -1692,6 +1701,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.ActionOverFlowMenuButton": [],
   "Ext.ux.ApplicationMenu": [],
   "Ext.ux.ContextMenu": [],
+  "Ext.ux.DropDownButton": [
+    "widget.dropdownbutton"
+  ],
   "Ext.ux.MenuButton": [],
   "Ext.ux.TabMenuButton": [],
   "Ext.ux.device.Analytics": [],
@@ -1725,13 +1737,27 @@ Ext.ClassManager.addNameAliasMappings({
   "SeaGrant_Proto.controller.List": [
     "cont"
   ],
+  "SeaGrant_Proto.model.City": [],
+  "SeaGrant_Proto.store.CountryStore": [],
+  "SeaGrant_Proto.store.Education": [],
   "SeaGrant_Proto.store.Info": [],
+  "SeaGrant_Proto.store.StateStore": [
+    "store.statestore"
+  ],
   "SeaGrant_Proto.view.Detail": [
     "widget.detail"
   ],
   "SeaGrant_Proto.view.Home": [
     "widget.Home",
     "widget.home"
+  ],
+  "SeaGrant_Proto.view.Info": [
+    "widget.Info",
+    "widget.info"
+  ],
+  "SeaGrant_Proto.view.ListView": [
+    "widget.ListView",
+    "widget.listview"
   ],
   "SeaGrant_Proto.view.Location": [
     "widget.location"
@@ -1741,6 +1767,10 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "SeaGrant_Proto.view.Map": [
     "widget.SeaGrantMap"
+  ],
+  "SeaGrant_Proto.view.Specific": [
+    "widget.Specific",
+    "widget.specific"
   ]
 });
 

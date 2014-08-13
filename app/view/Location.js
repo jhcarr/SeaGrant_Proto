@@ -1,6 +1,51 @@
+// Ext.define('SeaGrant_Proto.view.Location', {
+// 	extend: 'Ext.Map',
+// 	xtype: 'location',
+// 	// monitorResize: true,
+// 	config: {
+// 		layout: 'fit',
+//         // items: [
+//         //     {
+//         //         xtype: 'map',
+// 				mapOptions: {
+// 					center: new google.maps.LatLng(44.634115, -124.062796),
+// 					mapTypeId: google.maps.MapTypeId.ROADMAP,
+// 					zoom: 17
+// 				}
+// 		// 		listeners: {
+// 		// 			delay: 500,
+// 		// 			// This is the marker that works after the items and xtype are included
+// 		// 			maprender: function(extMapComponent, googleMapComp){
+// 		// 				var marker = new google.maps.Marker({
+// 		// 					map: this.getMap(),
+// 		// 					animation: google.maps.Animation.DROP,
+// 		// 					position: new google.maps.LatLng(44.634115, -124.062796)
+// 		// 				});
+// 		// 			}
+// 		// 		}
+// 		// 	}
+// 		// ]
+// 	},
+// 	initialize: function(){
+// 		var gMap = this.getMap();
+
+// 		// var marker = new google.maps.Marker({
+// 		// 	map:gMap,
+// 		// 	animation: google.maps.Animation.DROP,
+// 		// 	position: new google.maps.LatLng(44.634115, -124.062796)
+// 		// });
+// 	}
+// 	// onResize: function(w, h){
+// 	// 	Ext.Map.superclass.onResize.apply(this, arguments);
+// 	// 	if(this.map){
+// 	// 		google.maps.event.trigger(this.map, 'resize');
+// 	// 	}
+// 	// }
+// });
+
 Ext.define('SeaGrant_Proto.view.Location', {
 	extend: 'Ext.Container',
-	requires: 'SeaGrant_Proto.view.Map',
+	// requires: 'SeaGrant_Proto.view.Map',
 	alias: 'widget.location',
 	config: {
 		layout: {
@@ -12,9 +57,9 @@ Ext.define('SeaGrant_Proto.view.Location', {
 				title: 'Location',
 				docked: 'top'
 			},
-			{
-				xtype:'SeaGrantMap'
-			},
+			// {
+			// 	xtype:'SeaGrantMap'
+			// },
 			{
 				xtype: 'toolbar',
 				docked: 'bottom',
