@@ -54,6 +54,11 @@ Ext.define('SeaGrant_Proto.view.Info', {
 				delegate: '#specificButton',
 				event: 'tap',
 				fn: 'onSpecificButtonTap'
+			},
+			{
+				delegate: '#Ipagelist',
+				event: 'itemtap',
+				fn: 'onIpagelistDisclose'
 			}
 		]
 	},
@@ -64,5 +69,9 @@ Ext.define('SeaGrant_Proto.view.Info', {
 	onSpecificButtonTap: function(){
 		console.log('onSpecificButtonTap');
 		this.fireEvent('viewSpecificCommand', this);
+	},
+	onIpagelistDisclose: function(list, record, taget, index, evt, option){
+		console.log('viewIpageListItemCommand');
+		this.fireEvent('viewIpageListItemCommand', this, record, index);
 	}
 });

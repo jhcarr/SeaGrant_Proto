@@ -7,7 +7,7 @@ Ext.define('SeaGrant_Proto.view.Specific', {
 		items: [
 			{
 				xtype: 'toolbar',
-				title: 'Specific Page',
+				// title: 'Specific Page',
 				itemId: 'specificPageToolbar',
 				docked: 'top',
 				items: [

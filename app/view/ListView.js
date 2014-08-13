@@ -58,6 +58,11 @@ Ext.define('SeaGrant_Proto.view.ListView', {
 				delegate: '#infoButton',
 				event: 'tap',
 				fn: 'onInfoButtonTap'
+			},
+			{
+				delegate: '#Lpagelist',
+				event: 'itemtap',
+				fn: 'onLpagelistDisclose'
 			}
 		]
 	},
@@ -68,5 +73,9 @@ Ext.define('SeaGrant_Proto.view.ListView', {
 	onInfoButtonTap: function(){
 		console.log('onInfoButtonTap');
 		this.fireEvent('viewInfoCommand', this);
+	},
+	onLpagelistDisclose: function(list, record, target, index, evt, options){
+		console.log('viewLpageListItemCommand');
+		this.fireEvent('viewLpageListItemCommand', this, record, index);
 	}
 });

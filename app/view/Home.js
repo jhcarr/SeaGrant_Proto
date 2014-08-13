@@ -82,32 +82,22 @@ Ext.define('SeaGrant_Proto.view.Home', {
 	            xtype: 'fieldset',
 	            items: [
 	                {
-	                    xtype: 'selectfield',
-	                    itemId: '1',
-	                    label: 'Choose one',
-	                    options: [
-	                        {text: 'First Option',  value: 'first'},
-	                        {text: 'Second Option', value: 'second'},
-	                        {text: 'Third Option',  value: 'third'}
-	                    ]
-	                },
-	                {
 						xtype: 'selectfield',			
-						itemId: 'location',
+						itemId: 'selectlocation',
 						label: 'Location',
 						labelWrap: true,
-						displayField: 'id',
+						displayField: 'title',
 						store: 'Info',
-						valueField: 'id'
+						// valueField: 'id'
 					},				
 	                {
 						xtype: 'selectfield',			
-						itemId: 'product',
+						itemId: 'selectproduct',
 						label: 'Product',
 						labelWrap: true,
-						displayField: 'id',
+						displayField: 'products',
 						store: 'Info',
-						valueField: 'id'
+						// valueField: 'title'
 					}					
 	            ]	                  
 	        },
@@ -149,6 +139,16 @@ Ext.define('SeaGrant_Proto.view.Home', {
 				fn: 'onUseLocaion'
 			},
 			{
+				delegate: '#selectlocation',
+				event: 'change',
+				fn: 'onSelectLocation'
+			},
+			{
+				delegate: '#selectproduct',
+				event: 'change',
+				fn: 'onSelectProduct'
+			},
+			{
 				delegate: '#vendor',
 				event: 'tap',
 				fn: 'onVendorSelect'
@@ -163,6 +163,14 @@ Ext.define('SeaGrant_Proto.view.Home', {
 	onUseLocaion: function(){
 		console.log('setUseLocation');
 		this.fireEvent('setUseLocation', this, record);
+	},
+	onSelectLocation: function(){
+		console.log('chosenLocation');
+		this.fireEvent('chosenLocation', this, record);
+	},
+	onSelectProduct: function(){
+		console.log('chosenProduct');
+		this.fireEvent('chosenProduct', this, record);
 	},
 	onVendorSelect: function(){
 		console.log('sortByVendorCommand');

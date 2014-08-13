@@ -17,7 +17,7 @@ StartTest(function(t) {
     // Now check that it fires correct event to controller
     t.is(Bbtn[0].eventDispatcher.listenerStacks.component.listview.viewBackHomeCommand.listeners.current[0].fn.$name, 'onViewBackHomeCommand', 'The Back button sends us to the Home page.');
    
-
+    t.diag('Map tests');
     // Map view test
     var map = Ext.ComponentQuery.query('SeaGrantMap[itemId=listmap]');
     // console.log(map);
@@ -25,7 +25,7 @@ StartTest(function(t) {
     t.is(map[0]._itemId, 'listmap', 'Map exists');
     // check that the map reacts to user input
 
-
+    t.diag('List tests');
     // // list view test
     var list = Ext.ComponentQuery.query('list[itemId=Lpagelist]');
     // console.log("This is the List: ");
@@ -33,7 +33,7 @@ StartTest(function(t) {
     // Check list exists
     t.is(list[0]._itemId, 'Lpagelist', "List exists");
     // list select test
-    
+    t.is(list[0].eventDispatcher.listenerStacks.component.listview.viewLpageListItemCommand.listeners.current[0].fn.$name, 'onViewLpageListItemCommand', 'Selected List item fires event to controller');
     
 
     t.done();   // Optional, marks the correct exit point from the test

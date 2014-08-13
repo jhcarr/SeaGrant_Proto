@@ -14,13 +14,17 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		control: {
 			homeView: {
 				viewGoCommand: 'onViewGoCommand',
+				setUseLocation: 'onSetUseLocation',
+				chosenLocation: 'onChooseLocation',
+				chosenProduct: 'onChooseProduct',
 				sortByVendorCommand: 'onSortByVendorCommand',
-				sortByProductCommand: 'onSortByProductCommand',
-				setUseLocation: 'onSetUseLocation'
+				sortByProductCommand: 'onSortByProductCommand'
+				
 			},
 			listView: {
 				viewBackHomeCommand: 'onViewBackHomeCommand',
-				viewInfoCommand: 'onViewInfoCommand'
+				viewInfoCommand: 'onViewInfoCommand',
+				viewLpageListItemCommand: 'onViewLpageListItemCommand'
 			},
 			detailView: {
 				viewHomeCommand: 'onViewHomeCommand',
@@ -32,7 +36,8 @@ Ext.define('SeaGrant_Proto.controller.List', {
 			},
 			infoView: {
 				viewBackDetailCommand: 'onViewBackDetailCommand',
-				viewSpecificCommand: 'onViewSpecificCommand'
+				viewSpecificCommand: 'onViewSpecificCommand',
+				viewIpageListItemCommand: 'onViewIpageListItemCommand'
 			},
 			specificView: {
 				viewBackInfoCommand: 'onViewBackInfoCommand'
@@ -47,13 +52,20 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		type: 'slide',
 		direction: 'right'
 	},
+	// Functions dealing with home page stuff
 	onViewGoCommand: function(){
 		console.log('In controller: onViewGoCommand');
 		Ext.Viewport.animateActiveItem(this.getListView(), this.slideLeftTransition);
 		console.log('go to list page');
 	},
+	onChooseLocation: function(){
+		console.log('In controller: onChooseLocation');
+	},
+	onChooseProduct: function(){
+		console.log('In controller: onChooseProduct');
+	},
 	onSetUseLocation: function(){
-		console.log('onSetUseLocation');
+		console.log('In controller: onSetUseLocation');
 	},
 	onSortByVendorCommand: function(){
 		console.log('In controller: onSortByVendorCommand');
@@ -61,6 +73,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 	onSortByProductCommand: function(){
 		console.log('In controller: onSortByProductCommand');
 	},
+	// Functions dealing with list page stuff
 	onViewInfoCommand: function(){
 		console.log('In controller: onViewInfoCommand');
 		Ext.Viewport.animateActiveItem(this.getInfoView(), this.slideLeftTransition);
@@ -71,6 +84,11 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		Ext.Viewport.animateActiveItem(this.getHomeView(), this.slideRightTransition);
 		console.log('back to home page');
 	},
+	onViewLpageListItemCommand: function(record, list, index){
+		console.log('onViewLpageListItemCommand');
+		Ext.Msg.alert(index.data.title, 'This is the selected list item.');
+	},
+	// Functions dealing with info page stuff
 	onViewSpecificCommand: function(){
 		console.log('In controller: onViewSpecificCommand');
 		Ext.Viewport.animateActiveItem(this.getSpecificView(), this.slideLeftTransition);
@@ -81,11 +99,23 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		Ext.Viewport.animateActiveItem(this.getListView(), this.slideRightTransition);
 		console.log('back to detail page');
 	},
+	onViewIpageListItemCommand: function(record, list, index){
+		console.log('onViewIpageListItemCommand');
+		Ext.Msg.alert(index.data.listItem, 'This is the stuff I selected.');
+		// var tool =Ext.ComponentQuery.query('toolbar[itemId=infoPageToolbar]')[0];
+		// console.log(tool);
+		// var tool2 =Ext.ComponentQuery.query('toolbar[itemId=infoPageToolbar]')[0].setTitle(index.data.listItem);
+		// console.log(tool2);
+		Ext.ComponentQuery.query('toolbar[itemId=specificPageToolbar]')[0].setTitle(index.data.listItem);
+		Ext.Viewport.animateActiveItem(this.getSpecificView(), this.slideLeftTransition);
+	},
+	// Functions dealing with specific page stuff
 	onViewBackInfoCommand: function(){
 		console.log('In controller: onViewBackInfoCommand');
 		Ext.Viewport.animateActiveItem(this.getInfoView(), this.slideRightTransition);
 		console.log('back to info page');
 	},
+	// Functions dealing with OLD stuff
 	onViewLocationCommand: function(){
 		console.log('onViewLocationCommand');
 		Ext.Viewport.animateActiveItem(this.getLocationView(), this.slideLeftTransition);
