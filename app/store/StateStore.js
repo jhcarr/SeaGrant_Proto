@@ -1,4 +1,4 @@
-Ext.define('MyApp.store.StateStore', {
+Ext.define('SeaGrant_Proto.store.StateStore', {
     extend: 'Ext.data.Store',
     alias: 'store.statestore',
  
@@ -45,20 +45,20 @@ Ext.define('MyApp.store.StateStore', {
                 countryid: 3,
                 name: 'New York'
             }
-        ],
- 
-        storeId: 'States',
- 
-        fields: [
-            {
-                name: 'id'
-            },
-            {
-                name: 'countryid'
-            },
-            {
-                name: 'name'
-            }
         ]
+ 
+        // storeId: 'States',
+ 
+        // fields: [
+        //     {
+        //         name: 'id'
+        //     },
+        //     {
+        //         name: 'countryid'
+        //     },
+        //     {
+        //         name: 'name'
+        //     }
+        // ]
     }
 });

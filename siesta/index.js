@@ -11,7 +11,7 @@ Harness.configure({
         '../touch/sencha-touch-all-debug.js',
         'http://maps.google.com/maps/api/js?sensor=true',
         '../app/view/Location.js',
-        // '../app/view/Map.js',
+        '../app/view/Map.js',
         '../app/view/ListView.js',
         '../app/view/Info.js',
         '../app/view/Specific.js',
@@ -19,11 +19,13 @@ Harness.configure({
         '../app/view/Detail.js',
         '../app/controller/List.js',
         '../app/store/Info.js',
+        '../app/store/CountryStore.js',
+        '../app/store/Education.js',
         '../app/model/City.js',
         '../app.js'
     ]
 });
-console.log()
+
 Harness.start(
     '010_sanity.t.js',
     'home_test.t.js',

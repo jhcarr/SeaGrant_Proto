@@ -3,7 +3,7 @@ Ext.define('SeaGrant_Proto.store.Info', {
 	// requires: 'Ext.data.proxy.LocalStorage',
 	// id: 'thisStuff',
 	config: {
-		storeId: 'stuff',
+		// storeId: 'stuff',
 		// fields: [
   //          {
   //               name: 'id'

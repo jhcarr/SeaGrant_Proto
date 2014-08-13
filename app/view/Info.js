@@ -1,9 +1,13 @@
 Ext.define('SeaGrant_Proto.view.Info', {
-	extend: 'Ext.form.Panel',
+	extend: 'Ext.Panel',
+	requires: ['Ext.form.FieldSet', 'Ext.TabPanel', 'Ext.dataview.List', 'Ext.MessageBox'],
     fullscreen: true,
     xtype: 'Info',
 	alias: 'widget.info',
 	config: {
+		layout: {
+			type: 'fit'
+		},
 		items: [
 			{
 				xtype: 'toolbar',
@@ -24,8 +28,21 @@ Ext.define('SeaGrant_Proto.view.Info', {
 						itemId: 'specificButton'
 					}
 				]
-			}
-			
+			},
+			{
+				config: {
+					scrollable: {
+						direction: 'verticle',
+						directionLock: true
+					}
+				},
+				xtype: 'list',
+				store: 'Education',
+				itemId: 'Ipagelist',
+				loadingText: 'Loading Notes ...',
+				emptyText: '</pre><div class="\&quot;notes-list-empty-text\&quot;">No notes found.</div><pre>',
+				itemTpl: '</pre><div class="list-item-listItem">{listItem}</div><pre>'
+			}			
 		],
 		listeners: [
 			{

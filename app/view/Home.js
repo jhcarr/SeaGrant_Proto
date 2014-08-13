@@ -18,18 +18,18 @@
 // 				itemId: 'Country',
 // 				label: 'Location',
 // 				labelWrap: true,
-// 				displayfield: 'name',
-// 				store: 'Info',
-// 				valuefield: 'title'
+// 				displayField: 'name',
+// 				store: 'Countries',
+// 				valueField: 'id'
 // 			},
 // 			{
 // 				xtype: 'selectfield',			
 // 				itemId: 'id',
 // 				label: 'Product',
 // 				labelWrap: true,
-// 				displayfield: 'LatLong',
-// 				store: 'Info',
-// 				valuefield: 'id'
+// 				displayField: 'id',
+// 				store: 'Countries',
+// 				valueField: 'id'
 // 			}		
 // 		],
 // 		listeners: [
@@ -56,7 +56,7 @@
 // 		Ext.Msg.alert('Sorting future list data');
 // 		this.fireEvent("onSubmitButtonTap");
 // 	}
-// });
+// }); 
 
 Ext.define('SeaGrant_Proto.view.Home', {
 	extend: 'Ext.form.Panel',
@@ -75,7 +75,8 @@ Ext.define('SeaGrant_Proto.view.Home', {
 			{
 				xtype: 'togglefield',
 				name: 'userlocation',
-				label: 'Use Current Locaton'
+				label: 'Use Current Locaton',
+				itemId: 'userlocation'
 			},
 	        {
 	            xtype: 'fieldset',
@@ -94,21 +95,40 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						xtype: 'selectfield',			
 						itemId: 'location',
 						label: 'Location',
-						// labelWrap: true,
-						// displayfield: 'id',
-						store: 'stuff',
-						// valuefield: 'id'
+						labelWrap: true,
+						displayField: 'id',
+						store: 'Info',
+						valueField: 'id'
 					},				
 	                {
 						xtype: 'selectfield',			
 						itemId: 'product',
 						label: 'Product',
-						// labelWrap: true,
-						// displayfield: 'id',
-						store: 'stuff',
-						// valuefield: 'id'
+						labelWrap: true,
+						displayField: 'id',
+						store: 'Info',
+						valueField: 'id'
 					}					
 	            ]	                  
+	        },
+	        {
+	        	title: 'SortBy Two:',
+	        	items: [
+        	        {
+        	        	xtype: 'checkboxfield',
+	        			label: 'Vendors',
+	        			name: 'vendors',
+	        			inputValue: '1',
+	        			itemId: 'vendor'
+	        		},
+	        		{
+	        			xtype: 'checkboxfield',
+	        			label: 'Products',
+	        			name: 'products',
+	        			inputValue: '2',
+	        			itemId: 'product'
+	        		}
+		        ]
 	        },
 	        {
 				xtype: 'button',
@@ -122,8 +142,35 @@ Ext.define('SeaGrant_Proto.view.Home', {
 				delegate: '#goButton',
 				event: 'tap',
 				fn: 'onGoButtonTap'
+			},
+			{
+				delegate: '#userlocation',
+				event: 'tap',
+				fn: 'onUseLocaion'
+			},
+			{
+				delegate: '#vendor',
+				event: 'tap',
+				fn: 'onVendorSelect'
+			},
+			{
+				delegate: '#product',
+				event: 'tap',
+				fn: 'onProductSelect'
 			}
 		]	      
+	},
+	onUseLocaion: function(){
+		console.log('setUseLocation');
+		this.fireEvent('setUseLocation', this, record);
+	},
+	onVendorSelect: function(){
+		console.log('sortByVendorCommand');
+		this.fireEvent('sortByVendorCommand', this, record);
+	},
+	onProductSelect: function(){
+		console.log('sortByProductCommand');
+		this.fireEvent('sortByProductCommand', this, record);
 	},
 	onGoButtonTap: function(list, record, target, index, evt, options){
 		console.log('viewGoCommand');

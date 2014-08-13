@@ -18,21 +18,21 @@ StartTest(function(t) {
     t.is(Bbtn[0].eventDispatcher.listenerStacks.component.listview.viewBackHomeCommand.listeners.current[0].fn.$name, 'onViewBackHomeCommand', 'The Back button sends us to the Home page.');
    
 
-    // // Map view test
-    // var map = Ext.ComponentQuery.query('SeaGrantMap');
+    // Map view test
+    var map = Ext.ComponentQuery.query('SeaGrantMap[itemId=listmap]');
     // console.log(map);
-    // // Check that Map exists
-    // t.is(map[0]._itemId, 'listmap', 'Map exists');
-    // // check that the map reacts to user input
+    // Check that Map exists
+    t.is(map[0]._itemId, 'listmap', 'Map exists');
+    // check that the map reacts to user input
 
 
-    // // // list view test
-    // var list = Ext.ComponentQuery.query('list[itemId=Lpagelist]');
+    // // list view test
+    var list = Ext.ComponentQuery.query('list[itemId=Lpagelist]');
     // console.log("This is the List: ");
     // console.log(list);
-    // // Check list exists
-    // t.is(list[0]._itemId, 'Lpagelist', "List exists");
-    // // list select test
+    // Check list exists
+    t.is(list[0]._itemId, 'Lpagelist', "List exists");
+    // list select test
     
     
 

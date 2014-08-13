@@ -15,7 +15,7 @@ StartTest(function(t) {
     // This checks that a toggle button exists
     t.is(tog[0]._component._value[0], '0', 'We have a togglefield for user location');
     // Now check that when the toggle is toggled, an event is fired and recieved by the controller
-    // t.is(tog[0].eventDispatcher.listenerStacks.component.home."fired event".listeners.current[0].fn.$name, 'controller function name', 'The user location sends current user location data');
+    t.is(tog[0].eventDispatcher.listenerStacks.component.home.setUseLocation.listeners.current[0].fn.$name, 'onSetUseLocation', 'The user location sends current user location data');
 
     // Location drop list test
     var sel = Ext.ComponentQuery.query('selectfield[itemId=location]');
@@ -23,25 +23,25 @@ StartTest(function(t) {
     // console.log(sel);
     t.is(sel[0].config.itemId, 'location', " We have a Location selectfield");
 
-    // // Product drop list test
-    // var loc = Ext.ComponentQuery.query('selectfield[itemId=product]');
-    // // console.log("This is the Product selectfield: ");
-    // // console.log(loc);
-    // t.is(loc[0].config.itemId, 'product', " We have a Product selectfield");
+    // Product drop list test
+    var loc = Ext.ComponentQuery.query('selectfield[itemId=product]');
+    // console.log("This is the Product selectfield: ");
+    // console.log(loc);
+    t.is(loc[0].config.itemId, 'product', " We have a Product selectfield");
 
-    // // Optional sort function test
-    // var sortvend = Ext.ComponentQuery.query('fieldcontainer[itemId=vendor]');
-    // var sortprod = Ext.ComponentQuery.query('fieldcontainer[itemId=product]');
+    // Optional sort function test
+    var sortvend = Ext.ComponentQuery.query('checkboxfield[itemId=vendor]');
+    var sortprod = Ext.ComponentQuery.query('checkboxfield[itemId=product]');
     // console.log("Sorting by vendor:");
-    // console.log('sortvend');
+    // console.log(sortvend);
     // console.log("Sorting by product:");
-    // console.log('sortprod');
-    // // Checks that the two checkboxes exist
-    // t.is(sortvend[0]._itemId, 'vendor', 'Vendor checkbox exists');
-    // t.is(sortprod[0]._itemId, 'product', 'Product checkbox exists');
-    // // Now check that the check boxes fire the correct event to the controller
-    // t.is(sortvend[0].eventDispatcher.listenerStacks.component.home.sortByVendorCommand.listeners.current[0].fn.$name, 'onSortByVendorCommand', 'The vendor checkbox is used to sort the listpage list');
-    // t.is(sortprod[0].eventDispatcher.listenerStacks.component.home.sortByProductCommand.listeners.current[0].fn.$name, 'onSortByProductCommand', 'The product checkbox is used to sort the listpage list');
+    // console.log(sortprod);
+    // Checks that the two checkboxes exist
+    t.is(sortvend[0]._itemId, 'vendor', 'Vendor checkbox exists');
+    t.is(sortprod[0]._itemId, 'product', 'Product checkbox exists');
+    // Now check that the check boxes fire the correct event to the controller
+    t.is(sortvend[0].eventDispatcher.listenerStacks.component.home.sortByVendorCommand.listeners.current[0].fn.$name, 'onSortByVendorCommand', 'The vendor checkbox is used to sort the listpage list');
+    t.is(sortprod[0].eventDispatcher.listenerStacks.component.home.sortByProductCommand.listeners.current[0].fn.$name, 'onSortByProductCommand', 'The product checkbox is used to sort the listpage list');
     
     // Go button test
     var go = Ext.ComponentQuery.query('button[itemId=goButton]');

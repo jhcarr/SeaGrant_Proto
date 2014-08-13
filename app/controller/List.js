@@ -13,7 +13,10 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		},
 		control: {
 			homeView: {
-				viewGoCommand: 'onViewGoCommand'
+				viewGoCommand: 'onViewGoCommand',
+				sortByVendorCommand: 'onSortByVendorCommand',
+				sortByProductCommand: 'onSortByProductCommand',
+				setUseLocation: 'onSetUseLocation'
 			},
 			listView: {
 				viewBackHomeCommand: 'onViewBackHomeCommand',
@@ -48,6 +51,15 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		console.log('In controller: onViewGoCommand');
 		Ext.Viewport.animateActiveItem(this.getListView(), this.slideLeftTransition);
 		console.log('go to list page');
+	},
+	onSetUseLocation: function(){
+		console.log('onSetUseLocation');
+	},
+	onSortByVendorCommand: function(){
+		console.log('In controller: onSortByVendorCommand');
+	},
+	onSortByProductCommand: function(){
+		console.log('In controller: onSortByProductCommand');
 	},
 	onViewInfoCommand: function(){
 		console.log('In controller: onViewInfoCommand');
