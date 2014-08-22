@@ -174,6 +174,242 @@
 			"contact_name": "Carlos Molena", 
 			"story": 80, 
 			"name": "Waterfront Seafood Shop"
+		},
+		{
+
+			"city": "Newport", 
+			"updated": "2014-08-08 23:22:17.495000+00:00", 
+			"description": "Fast and Fresh food!", 
+			"zip": "97408",
+			"created": "2014-08-08 23:22:17.495000+00:00", 
+			"ext": {}, 
+			"location_description": "Off 101 on SeaBass way.", 
+			"long": 49243.1818181818, 
+			"email": "FishFact@txx.com", 
+			"website": "http://fishfactory.com", 
+			"phone": 5415036574, 
+			"state": "Oregon", 
+			"street": "SeaBass way", 
+			"products": [ 
+							{
+								"preparation": "fresh", 
+								"name": "Albacore Tuna"
+							}, 
+							{
+								"preparation": "fresh", 
+								"name": "Salmon"
+							}
+						], 
+			"lat": -30142.7272727273, 
+			"contact_name": "Martin Sawer", 
+			"story": 80, 
+			"name": "Fresh Food Store"
+		},
+		{
+			"city": "Waldport", 
+			"updated": "2014-08-08 23:22:17.495000+00:00", 
+			"description": "Best in the west.", 
+			"zip": "98508",
+			"created": "2014-08-08 23:22:17.495000+00:00", 
+			"ext": {}, 
+			"location_description": "Off of Baker street", 
+			"long": 49243.1818181818, 
+			"email": "Waterfrontss@txx.com", 
+			"website": "http://Waterfrontss.com", 
+			"phone": 541-503-6574, 
+			"state": "Oregon", 
+			"street": "Hwy 101", 
+			"products": [ 
+							{
+								"preparation": "grilled", 
+								"name": "Salmon"
+							}, 
+							{
+								"preparation": "grilled", 
+								"name": "Albacore Tuna"
+							}
+						], 
+			"lat": -30142.7272727273, 
+			"contact_name": "James Mo", 
+			"story": 80, 
+			"name": "Mo's Seafood"
+		},
+		{
+
+			"city": "Gold Beach", 
+			"updated": "2014-08-08 23:22:17.495000+00:00", 
+			"description": "Eat'n on the beach.", 
+			"zip": "97408",
+			"created": "2014-08-08 23:22:17.495000+00:00", 
+			"ext": {}, 
+			"location_description": "Off 101 on SeaBass way.", 
+			"long": 49243.1818181818, 
+			"email": "FishFact@txx.com", 
+			"website": "http://fishfactory.com", 
+			"phone": 5415036574, 
+			"state": "Oregon", 
+			"street": "SeaBass way", 
+			"products": [ 
+							{
+								"preparation": "grilled", 
+								"name": "Crab"
+							}, 
+							{
+								"preparation": "boiled", 
+								"name": "Crab Legs"
+							}
+						], 
+			"lat": -30142.7272727273, 
+			"contact_name": "Waren Overholts", 
+			"story": 80, 
+			"name": "Beach Bum Crab Shop"
+		},
+		{
+			"city": "Florence", 
+			"updated": "2014-08-08 23:22:17.495000+00:00", 
+			"description": "The Freshest Seafood in Florence.", 
+			"zip": "98508",
+			"created": "2014-08-08 23:22:17.495000+00:00", 
+			"ext": {}, 
+			"location_description": "Off of Baker street", 
+			"long": 49243.1818181818, 
+			"email": "Waterfrontss@txx.com", 
+			"website": "http://Waterfrontss.com", 
+			"phone": 541-503-6574, 
+			"state": "Oregon", 
+			"street": "Hwy 101", 
+			"products": [ 
+							{
+								"preparation": "fresh", 
+								"name": "Clams"
+							}, 
+							{
+								"preparation": "fresh", 
+								"name": "Albacore Tuna"
+							}
+						], 
+			"lat": -30142.7272727273, 
+			"contact_name": "Tony Jones", 
+			"story": 80, 
+			"name": "Tony's Place"
+		},
+		{
+
+			"city": "Newport", 
+			"updated": "2014-08-08 23:22:17.495000+00:00", 
+			"description": "Oldest store in town.", 
+			"zip": "97408",
+			"created": "2014-08-08 23:22:17.495000+00:00", 
+			"ext": {}, 
+			"location_description": "Off 101 on SeaBass way.", 
+			"long": 49243.1818181818, 
+			"email": "FishFact@txx.com", 
+			"website": "http://fishfactory.com", 
+			"phone": 5415036574, 
+			"state": "Oregon", 
+			"street": "SeaBass way", 
+			"products": [ 
+							{
+								"preparation": "fresh", 
+								"name": "Albacore Tuna"
+							}, 
+							{
+								"preparation": "fresh", 
+								"name": "Salmon"
+							}
+						], 
+			"lat": -30142.7272727273, 
+			"contact_name": "Tim Smith", 
+			"story": 80, 
+			"name": "Newport Fish-Mart"
+		},
+		{
+			"city": "Waldport", 
+			"updated": "2014-08-08 23:22:17.495000+00:00", 
+			"description": "Nothing frozen.", 
+			"zip": "98508",
+			"created": "2014-08-08 23:22:17.495000+00:00", 
+			"ext": {}, 
+			"location_description": "Off of Baker street", 
+			"long": 49243.1818181818, 
+			"email": "Waterfrontss@txx.com", 
+			"website": "http://Waterfrontss.com", 
+			"phone": 541-503-6574, 
+			"state": "Oregon", 
+			"street": "Hwy 101", 
+			"products": [ 
+							{
+								"preparation": "fresh", 
+								"name": "Clams"
+							}, 
+							{
+								"preparation": "fresh", 
+								"name": "Albacore Tuna"
+							}
+						], 
+			"lat": -30142.7272727273, 
+			"contact_name": "Steve Carlton", 
+			"story": 80, 
+			"name": "Finest Fish"
+		},
+		{
+
+			"city": "Newport", 
+			"updated": "2014-08-08 23:22:17.495000+00:00", 
+			"description": "The Best Fish in town", 
+			"zip": "97408",
+			"created": "2014-08-08 23:22:17.495000+00:00", 
+			"ext": {}, 
+			"location_description": "Off 101 on SeaBass way.", 
+			"long": 49243.1818181818, 
+			"email": "FishFact@txx.com", 
+			"website": "http://fishfactory.com", 
+			"phone": 5415036574, 
+			"state": "Oregon", 
+			"street": "SeaBass way", 
+			"products": [ 
+							{
+								"preparation": "fresh", 
+								"name": "Albacore Tuna"
+							}, 
+							{
+								"preparation": "fresh", 
+								"name": "Salmon"
+							}
+						], 
+			"lat": -30142.7272727273, 
+			"contact_name": "Toy Story", 
+			"story": 80, 
+			"name": "Fish-R-us!"
+		},
+		{
+			"city": "Waldport", 
+			"updated": "2014-08-08 23:22:17.495000+00:00", 
+			"description": "Nothing but the best.", 
+			"zip": "98508",
+			"created": "2014-08-08 23:22:17.495000+00:00", 
+			"ext": {}, 
+			"location_description": "Off of Baker street", 
+			"long": 49243.1818181818, 
+			"email": "Waterfrontss@txx.com", 
+			"website": "http://Waterfrontss.com", 
+			"phone": 541-503-6574, 
+			"state": "Oregon", 
+			"street": "Hwy 101", 
+			"products": [ 
+							{
+								"preparation": "fresh", 
+								"name": "Clams"
+							}, 
+							{
+								"preparation": "fresh", 
+								"name": "Albacore Tuna"
+							}
+						], 
+			"lat": -30142.7272727273, 
+			"contact_name": "Camron Brown", 
+			"story": 80, 
+			"name": "The Big Clam"
 		}
 	]
 }

@@ -30,7 +30,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						displayField: 'title',
 						store: 'Location',
 						// valueField: 'id'
-					},				
+					},
 	                {
 						xtype: 'selectfield',			
 						itemId: 'selectproduct',
@@ -41,6 +41,11 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						// valueField: 'title'
 					}					
 	            ]	                  
+	        },
+	        {	
+	        	xtype: 'panel',
+	        	itemId: 'vendnum',
+	        	tpl: '</pre><div class="vendnum">Number of vendors: data-{id}, {_name}, {_label}, {data}, {_data}</div><pre>'
 	        },
 	        {
 	   			// Checkboxes for sorting data on list page
@@ -61,6 +66,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 	        		}
 		        ]
 	        },
+	        
 	        {
 				xtype: 'button',
 				ui: 'action',

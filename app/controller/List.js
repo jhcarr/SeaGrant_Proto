@@ -49,7 +49,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 	},
 	// Functions dealing with 
 	// HOME
-	// stuff
+	// stuff	######################################################################################	HOME
 	onSetUseLocation: function(){
 		console.log('In controller(home): User Location toggle');
 	},	
@@ -71,6 +71,15 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		});
 		store.clearFilter(); // this is the fix
 		store.filter(locationfilter); //now it works
+		var vendcount = store.getCount();
+		console.log(vendcount);
+		var homeView = this.getHomeView();
+		var crud = homeView.getComponent('vendnum'); // gets our display item in from the home page
+		console.log(crud.getData()); // trying to get into _data so I can add vendcount such that we can correctly access it
+		crud.setData(record); // needed to display tpl data on home view
+		console.log(homeView);
+		Ext.Viewport.setActiveItem(homeView);
+		// return vendcount;
 	},
 	onChooseProduct: function(index, record){
 		console.log('In controller(home): Drop Down list Products');
@@ -89,7 +98,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 	},
 	// Functions dealing with 
 	// LIST
-	// stuff
+	// stuff	######################################################################################	LIST
 	onViewBackHomeCommand: function(){
 		console.log('In controller(list): Back to Home Page Button');
 		Ext.Viewport.animateActiveItem(this.getHomeView(), this.slideRightTransition);
@@ -118,11 +127,12 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		console.log(index.data.products.name);
 		store.clearFilter();
 		store.filter(productfilter);
+		console.log(detailView);
 		Ext.Viewport.animateActiveItem(detailView, this.slideLeftTransition);
 	},
 	// Functions dealing with 
 	// DETAIL
-	// stuff
+	// stuff	######################################################################################	DETAIL
 	onViewBackListCommand: function(record, index){
 		console.log('In controller(detail): Back to List Page Button');
 		var store = Ext.data.StoreManager.lookup('Vendor');
@@ -151,7 +161,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 	},
 	// Functions dealing with 
 	// INFO 
-	// stuff
+	// stuff	######################################################################################	INFO
 	onViewBackDetailCommand: function(){
 		console.log('In controller(info): Back to Detail Page Button');
 		Ext.Viewport.animateActiveItem(this.getDetailView(), this.slideRightTransition);
@@ -168,7 +178,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 	},
 	// Functions dealing with
 	// SPECIFIC
-	// stuff
+	// stuff	######################################################################################	SPECIFIC
 	onViewBackInfoCommand: function(){
 		console.log('In controller(specific): Back to Info Page Button');
 		Ext.Viewport.animateActiveItem(this.getInfoView(), this.slideRightTransition);
