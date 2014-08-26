@@ -1,4 +1,4 @@
-C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\ant-gen\foo\bar\SeaGrant_Proto\R.java \
+C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\ant-gen\com\domain\SeaGrant_Proto\R.java \
  : C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\res\drawable\icon.png \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\res\drawable-hdpi\icon.png \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\res\drawable-land-hdpi\screen.png \
