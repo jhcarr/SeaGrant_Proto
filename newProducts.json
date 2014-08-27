@@ -1,7 +1,8 @@
 {
 	"products":	[	
 		{
-			"name": "Please choose a product"
+			"name": "Please choose a product",
+			"value": "0"
 		},
 		{
 			"origin": "Berring Sea", 
@@ -16,7 +17,8 @@
 			"link": "http://en.wikipedia.org/wiki/Dungeness_crab", 
 			"alt_name": "Metacarcinus magister", 
 			"story_id": 53, 
-			"name": "Dungeness Crab"
+			"name": "Dungeness Crab",
+			"value": "1"
 		},
 		{
 			"origin": "Oregon coast", 
@@ -31,7 +33,9 @@
 			"link": "http://en.wikipedia.org/wiki/Dungeness_crab", 
 			"alt_name": "Metacarcinus magister", 
 			"story_id": 53, 
-			"name": "Salmon"
+			"name": "Salmon",
+			"text": "rand stuff",
+			"value": "2"
 		},
 		{
 			"origin": "North West", 
@@ -46,7 +50,8 @@
 			"link": "http://en.wikipedia.org/wiki/Albacore", 
 			"alt_name": "Metacarcinus magister", 
 			"story_id": 53, 
-			"name": "Albacore Tuna"
+			"name": "Albacore Tuna",
+			"value": "3"
 		},
 		{
 			"origin": "North West", 
@@ -61,7 +66,8 @@
 			"link": "http://en.wikipedia.org/wiki/Albacore", 
 			"alt_name": "Metacarcinus magister", 
 			"story_id": 53, 
-			"name": "Shark"
+			"name": "Shark",
+			"value": "4"
 		},
 		{
 			"origin": "North West", 
@@ -76,7 +82,8 @@
 			"link": "http://en.wikipedia.org/wiki/Albacore", 
 			"alt_name": "Metacarcinus magister", 
 			"story_id": 53, 
-			"name": "Clams"
+			"name": "Clams",
+			"value": "5"
 		},
 		{
 			"origin": "North West", 
@@ -91,7 +98,8 @@
 			"link": "http://en.wikipedia.org/wiki/Albacore", 
 			"alt_name": "Metacarcinus magister", 
 			"story_id": 53, 
-			"name": "Oysters"
+			"name": "Oysters",
+			"value": "6"
 		}
 
 	]

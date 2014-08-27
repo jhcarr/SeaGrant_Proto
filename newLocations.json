@@ -35,6 +35,7 @@
 		{
 			"title": "Reedsport",
 			"Latlng": "43.706747, -124.113607",
+			"value": "4",
 			"id": "4",
 			"products": "salmon",
 			"desc": "Incorporated in 1919 near the confluence of three rivers – the Umpqua, the Smith, and the Scholfield, the City of Reedsport is located on the beautiful Oregon Coast on Highways 101 and 38 on the banks of the Umpqua River – the largest river between the Sacramento and the Columbia. Located in the heart of the Oregon Dunes National Recreational Area, Reedsport is in close proximity to over 17 freshwater lakes and is just four miles from Winchester Bay and the Pacific Ocean. Reedsport is an outdoor lover’s paradise. The Umpqua River is home to one of the largest recreational fishing ports on the Oregon Coast. In addition to fishing, citizens, guests, and visitors enjoy hunting, hiking, riding ATVs on the Dunes, beachcombing, boating, bike riding, and much more. Just three miles east on Highway 38 is the famous Dean Creek Elk Viewing area currently sustaining hundreds of Oregon's Roosevelt Elk in their natural habitat with viewing stations and photo opportunities. Reedsport is located in Douglas County on the central Oregon coast at the intersection of Oregon Highway 38 and U.S. Highway 101. The City is approximately 195 miles south of Portland, 87 miles southwest of Eugene, 70 miles west of Roseburg, 25 miles north of Coos Bay, and 21 miles south of Florence. Reedsport is within easy driving distance the University of Oregon and Oregon State University, shopping and cultural centers, and a variety of excellent outdoor recreation areas. Southwestern Oregon Community College, (SWOCC), is located in nearby Coos Bay. "
@@ -42,6 +43,7 @@
 		{
 			"title": "Coos bay",
 			"Latlng": "43.37261, -124.218664",
+			"value": "5",
 			"id": "5",
 			"products": "shrimp",
 			"desc": "Historically known as Marshfield, Coos Bay proudly stands today as the largest city on the Oregon Coast with Portland State University having certified the 2012 Population Estimate at 16,060; Coos Bay is a great place to live, work and play.  Surrounded by a beautiful bay, lush emerald forests and the mighty Pacific Ocean, Coos Bay continues to celebrate its history in shipbuilding, lumber products and tradition as the regional hub for Oregon's south coast.  Coos Bay is a proud community with a rich heritage and “can-do” attitude."
@@ -49,11 +51,14 @@
 		{
 			"title": "Bandon",
 			"Latlng": "43.115167, -124.409552",
+			"value": "6",
 			"id": "6",
 			"products": "scalops",
 			"desc": "Call it Bandon or call it Bandon-by-the-Sea. However you refer to us; our seacoast town is sure to delight you with its charm, its scenic beauty, its rich opportunities for recreation, relaxation, and its warmth shown you by its people. Located on the Southern Oregon Coast where the Coquille River meets the Pacific Ocean, Bandon, Oregon is 90 miles north of the California border, about a 90 minute drive to Interstate 5 at Roseburg, five hours by car from Portland and about nine hours from San Francisco. It is home to five world premier golf courses, Bandon Dunes, Pacific Dunes, Bandon Trails, Old Macdonald and Bandon Preserve, all of which are part of the Bandon Dunes Golf Resort. In addition to the Bandon Dunes Golf Resort, there are 2 more courses in Bandon, Bandon Crossings, an 18 hole course and Old Bandon Golf Links, a 9 hole course. We are quickly becoming known as Oregon's Golf Coast! The scenic beauty which Bandon offers is unparalleled. Enjoy birding, surfing, crabbing, fishing, mushroom picking...and so much more! We are sure you'll find Bandon very enjoyable! For all that it has to offer, it remains charmingly undiscovered and unspoiled. The people who live here (population 3100 or so) love it, and each year, first-time visitors discover why. "
 		},
-		{
+		{	
+			"text": "item GB",
+			"value": "7",
 			"title": "Gold Beach",
 			"Latlng": "42.406302, -124.419420",
 			"id": "7",
@@ -63,6 +68,7 @@
 		{
 			"title": "Brookings",
 			"Latlng": "42.051287, -124.283807",
+			"value": "8",
 			"id": "8",
 			"products": "Lobster",
 			"desc": "temp stuff"
@@ -70,6 +76,7 @@
 		{
 			"title": "Depoe Bay",
 			"Latlng": "44.809437, -124.059516",
+			"value": "9",
 			"id": "9",
 			"products": "Prawns",
 			"desc": "temp stuff"
@@ -77,6 +84,7 @@
 		{
 			"title": "Lincoln City",
 			"Latlng": "44.957217, -124.014541",
+			"value": "10",
 			"id": "10",
 			"products": "octopus",
 			"desc": "temp stuff"
@@ -84,6 +92,7 @@
 		{
 			"title": "Tillamook",
 			"Latlng": "45.455024, -123.846656",
+			"value": "11",
 			"id": "11",
 			"products": "tuna",
 			"desc": "temp stuff"
@@ -91,6 +100,7 @@
 		{
 			"title": "Seaside",
 			"Latlng": "45.991815, -123.922769",
+			"value": "12",
 			"id": "12",
 			"products": "mussels",
 			"desc": "temp stuff"
@@ -98,6 +108,7 @@
 		{
 			"title": "Astoria",
 			"Latlng": "46.187831, -123.833543",
+			"value": "13",
 			"id": "13",
 			"products": "shark",
 			"desc": "temp stuff"

@@ -20,7 +20,8 @@ Ext.define('SeaGrant_Proto.model.City', {
         	'lat',
         	'contact_name',
         	'story',
-        	'name'
+        	'name',
+            'value'
         ]
     }
 });

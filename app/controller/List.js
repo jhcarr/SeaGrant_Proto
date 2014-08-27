@@ -58,37 +58,110 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		console.log("In controller(home): Distance from user chosen");
 	},
 	onChooseLocation: function(index, record){
+		// We first check to see if a location is chosen, if one is we sort by locataion,
+		// then we check to see if a product is chosen, if one is we sort by product
 		console.log('In controller(home): Drop Down list Location');
-		var loc = this.getHomeView();
+		// var loc = this.getHomeView();
 		// console.log(record);
-		var location = record._value.data.title;
+		SeaGrant_Proto.location = record._value.data.title;
 		// console.log('Location is: '+ location);
 		// ALL FILTERS ONLY TAKE STRINGS, NONE WORK WITH VARABLES
 		// THAT ARE SELECED USING DROP DOWN TABLES, EVEN TOSTRING()
 		// FUNCTION WILL NOT WORK
 		var store = Ext.data.StoreManager.lookup('Vendor');
-		var locationfilter = new Ext.util.Filter({
-			filterFn: function(item, record){
-				return item.get('city') === location;
-			},
-			root: 'data'
-		});
-		store.clearFilter(); // this is the fix
-		store.filter(locationfilter); //now it works
-		var vendcount = store.getCount();
-		console.log(vendcount);
-		var homeView = this.getHomeView();
-		var crud = homeView.getComponent('vendnum'); // gets our display item in from the home page
-		console.log(crud.getData()); // trying to get into _data so I can add vendcount such that we can correctly access it
-		crud.setData(record); // needed to display tpl data on home view
-		console.log(homeView);
-		Ext.Viewport.setActiveItem(homeView);
+		var len = store.data.all.length;
+		if(SeaGrant_Proto.location != 'Please choose a location'){
+			var locationfilter = new Ext.util.Filter({
+				filterFn: function(item, record){
+					return item.get('city') === SeaGrant_Proto.location;
+				},
+				root: 'data'
+			});
+			store.clearFilter(); // this is the fix
+			store.filter(locationfilter); //now it works
+		}else{
+			store.clearFilter();
+		};
+		if(SeaGrant_Proto.product != 'Please choose a product'){
+			// console.log('IN PROD FILTER');
+			var prodFilter = new Ext.util.Filter({
+				filterFn: function(item, record){
+					for(b = 0; b < item.data.products.length; b++){ // cycles through the vendor's products
+						// console.log(b+'  '+item.data.products[b].name);
+						if(item.data.products[b].name === SeaGrant_Proto.product){ // returns true for vendors with selected product
+							return item.data.products[b].name === SeaGrant_Proto.product;
+						}
+					}				
+				},
+				root: 'data'
+			});
+			store.filter(prodFilter);
+		};
+		// Keep this it is for Number of vendors based on user sorting
+		// var vendcount = store.getCount();
+		// console.log(vendcount);
+		// var homeView = this.getHomeView();
+		// var crud = homeView.getComponent('vendnum'); // gets our display item in from the home page
+		// console.log(crud.getData()); // trying to get into _data so I can add vendcount such that we can correctly access it
+		// crud.setData(record); // needed to display tpl data on home view
+		// console.log(homeView);
+		// Ext.Viewport.setActiveItem(homeView);
 		// return vendcount;
 	},
 	onChooseProduct: function(index, record){
+		// We first check to see if a location is chosen, if one is we sort by locataion,
+		// then we check to see if a product is chosen, if one is we sort by product
 		console.log('In controller(home): Drop Down list Products');
 		// console.log(record);
-		console.log('Product is: '+ record._value.data.name);
+		// console.log('Product is: '+ record._value.data.name);
+		SeaGrant_Proto.product = record._value.data.name;
+		var store = Ext.data.StoreManager.lookup('Vendor');
+		// console.log(store.data.all);
+		var len = store.data.all.length;
+		// console.log(store);
+		if(SeaGrant_Proto.location != 'Please choose a location'){
+			// console.log('IN LOC FILTER');
+			var locationfilter = new Ext.util.Filter({
+				filterFn: function(item, record){
+					return item.get('city') === SeaGrant_Proto.location;
+				},
+				root: 'data'
+			});
+			store.clearFilter();
+			store.filter(locationfilter);
+		} else{
+			store.clearFilter();
+		};
+		if(SeaGrant_Proto.product != 'Please choose a product'){
+			var prodFilter = new Ext.util.Filter({
+				filterFn: function(item, record){
+					// var prod;
+					// // int k = 0;
+					// for(i = 0; i < len; i++){
+					// 	for(j = 0; j < 2; j++){
+					// 		// if(store.data.all[i].data.products[j].name === product){
+								
+					// 		// 	console.log(store.data.all[i].data.products[j].name+' And it is: '+product);
+					// 		// 	console.log('i: '+i+' j: '+j);
+					// 		// 	// prod = store.data.all[i].data.products[j].name === product;
+					// 		// }
+					// 		// var h = (i+1)*(j+1);		
+					// 		// console.log('this is your number '+h);				
+					// 	}
+					// }
+					// // return store.data.all[i].data.products[j].name === product;
+
+					for(b = 0; b < item.data.products.length; b++){ // cycles through the vendor's products
+						// console.log(b+'  '+item.data.products[b].name);
+						if(item.data.products[b].name === SeaGrant_Proto.product){ // returns true for vendors with selected product
+							return item.data.products[b].name === SeaGrant_Proto.product;
+						}
+					}				
+				},
+				root: 'data'
+			});		
+			store.filter(prodFilter);
+		};
 	},	
 	onSortByVendorCommand: function(){
 		console.log('In controller(home): Vendor checkbox');
@@ -142,15 +215,33 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		var store = Ext.data.StoreManager.lookup('Vendor');
 		// console.log(record);
 		// console.log(index);
-		var location = record._activeItem._data.city;
-		var locationfilter = new Ext.util.Filter({
-			filterFn: function(item, record){
-				return item.get('city') === location;
-			},
-			root: 'data'
-		});
-		store.clearFilter();
-		store.filter(locationfilter);
+		var len = store.data.all.length;
+		if(SeaGrant_Proto.location != 'Please choose a location'){
+			var locationfilter = new Ext.util.Filter({
+				filterFn: function(item, record){
+					return item.get('city') === SeaGrant_Proto.location;
+				},
+				root: 'data'
+			});
+			store.clearFilter(); // this is the fix
+			store.filter(locationfilter); //now it works
+		}else{
+			store.clearFilter();
+		};
+		if(SeaGrant_Proto.product != 'Please choose a product'){
+			var prodFilter = new Ext.util.Filter({
+				filterFn: function(item, record){
+					for(b = 0; b < item.data.products.length; b++){ // cycles through the vendor's products
+						// console.log(b+'  '+item.data.products[b].name);
+						if(item.data.products[b].name === SeaGrant_Proto.product){ // returns true for vendors with selected product
+							return item.data.products[b].name === SeaGrant_Proto.product;
+						}
+					}				
+				},
+				root: 'data'
+			});
+			store.filter(prodFilter);
+		};
 		Ext.Viewport.animateActiveItem(this.getListView(), this.slideRightTransition);
 	},
 	onViewInfoCommand: function(){
