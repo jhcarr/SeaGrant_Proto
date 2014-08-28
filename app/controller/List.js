@@ -1,6 +1,6 @@
 Ext.define('SeaGrant_Proto.controller.List', {
 	extend: 'Ext.app.Controller',
-	requires: 'Ext.MessageBox',
+	requires: ['Ext.MessageBox', 'Ext.device.Geolocation'],
 	alias: 'cont',
 	config: {
 		refs: {
@@ -51,11 +51,33 @@ Ext.define('SeaGrant_Proto.controller.List', {
 	// Functions dealing with 
 	// HOME
 	// stuff	######################################################################################	HOME
-	onSetUseLocation: function(){
+	onSetUseLocation: function(index, record){
 		console.log('In controller(home): User Location toggle');
+		console.log(record._component._value[0]);
+		console.log(record);
+		if(record._component._value[0] == 1){
+			// This updates the user's location and how far from their location they would like to search for vendors/products
+			Ext.device.Geolocation.watchPosition({
+			    frequency: 3000, // Update every 3 seconds
+			    callback: function(position) {
+			        console.log('Position updated!', position.coords);
+			        // console.log(index._items.items[2]._value.data.val);
+					var dist = index._items.items[2]._value.data.val;
+			    },
+			    failure: function() {
+			        console.log('something went wrong!');
+			    }
+			});
+			
+		}else{
+			Ext.device.Geolocation.clearWatch();
+		};
 	},
+	// This function may be unnecessary due to the fact that we set the distance in the callback function above
 	onSetDistance: function(index, record){
 		console.log("In controller(home): Distance from user chosen");
+		// console.log(record._value.data.val);
+		SeaGrant_Proto.dist = record._value.data.val;
 	},
 	onChooseLocation: function(index, record){
 		console.log('In controller(home): Drop Down list Location');

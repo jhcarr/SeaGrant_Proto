@@ -40,6 +40,7 @@ Ext.define('SeaGrant_Proto.view.Home', {
 						xtype: 'selectfield',			
 						itemId: 'selectlocation',
 						label: 'Location',
+						activeLabel: 'Here We Use The Location of The User',
 						labelWrap: true,
 						displayField: 'title',
 						store: 'Location',
