@@ -12,7 +12,7 @@
 
 Ext.Loader.setConfig({
     enabled:true,
-    disableCaching: false,
+    disableCaching: false, 
     paths: {
         "Ext": 'touch/src'
     }

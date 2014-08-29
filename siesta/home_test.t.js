@@ -4,7 +4,7 @@ StartTest(function(t) {
     // Header test 
     var tool = Ext.ComponentQuery.query('toolbar');
     // console.log('This is the toolbar: ');
-    // console.log(tool);
+    console.log(tool);
     t.is(tool[0].config.itemId, 'homePageToolbar', "We have a Header");
 
     // User location toggle test

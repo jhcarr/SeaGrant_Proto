@@ -1,5 +1,6 @@
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\ant-build\SeaGrant_Proto.ap_ \
  : C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\res\drawable\icon.png \
+C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\res\drawable\splash.png \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\res\drawable-hdpi\icon.png \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\res\drawable-land-hdpi\screen.png \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\res\drawable-land-ldpi\screen.png \
@@ -65,8 +66,10 @@ C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\de
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\app.js\9f5078186f9f44d13e1533d6d3c1c59dabf14e0f.json \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\app.js\a1511343f02e1ee2e889ec6182e24e5666fa37de.json \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\app.js\aa0b2646a118302528819e60762f9700dced83e0.json \
+C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\app.js\b549856cbb7d8b8a43895ef15894039df5c6d042.json \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\app.js\bd357c97b750727a089efc913b0a1b5dcdfcf66a.json \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\app.js\e3b6f297329c80594a315766413f45aeff84808a.json \
+C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\app.js\fb30474311fcf04f9000a3bd6d90039b82797623.json \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\resources\css \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\resources\css\app.css \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\resources\css\app.css\188c6b8730e6fe471a3a30246508deab9a1d40c0.json \
@@ -84,6 +87,7 @@ C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\de
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\resources\css\app.css\ba32e2442908fc2f1caa4222a61882a4896485c6.json \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\resources\css\app.css\bbfc67ef41cc0acb2d84951f7caf2f4be29c2b32.json \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\resources\css\app.css\c8dbd7e5998a2a1e071f844f63683b22919bd8fe.json \
+C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\resources\css\app.css\e61cc939e032f0e2f6d47a34bf0467297d775247.json \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\deltas\resources\css\app.css\faf42bb4addf21258bc1334dcf5660fddf0f393f.json \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\img\logo.png \
 C:\Users\michael.freeman\SeaGrant_Proto\phonegap\platforms\android\assets\www\js\index.js \

@@ -40,6 +40,7 @@ Harness.configure({
 
 Harness.start(
     '010_sanity.t.js',
+    'splash_test.t.js',
     'home_test.t.js',
     'detail_test.t.js',
     'list_test.t.js',
