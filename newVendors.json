@@ -27,7 +27,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": {"one":"Todd Sherman", "two":"Todd Bogg"},
 			"story": 80, 
-			"name": "Todd's Tuna Farm"
+			"name": "Todd's Tuna Farm",
+			"value": "1"
 		},
 		{
 			"city": "Florence", 
@@ -56,7 +57,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Cody Jennings", 
 			"story": 80, 
-			"name": "Cody's Clam Shop"
+			"name": "Cody's Clam Shop",
+			"value": "2"
 		},
 		{
 			"city": "Gold Beach", 
@@ -85,7 +87,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "James Renolds", 
 			"story": 80, 
-			"name": "The Shark Shop"
+			"name": "The Shark Shop",
+			"value": "3"
 		},
 		{
 			"city": "Waldport", 
@@ -114,7 +117,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Captain Jones", 
 			"story": 80, 
-			"name": "Lady Luck"
+			"name": "Lady Luck",
+			"value": "4"
 		},
 		{
 
@@ -144,7 +148,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Tim Duncan", 
 			"story": 80, 
-			"name": "Fish Factory"
+			"name": "Fish Factory",
+			"value": "5"
 		},
 		{
 			"city": "Waldport", 
@@ -173,7 +178,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Carlos Molena", 
 			"story": 80, 
-			"name": "Waterfront Seafood Shop"
+			"name": "Waterfront Seafood Shop",
+			"value": "6"
 		},
 		{
 
@@ -203,7 +209,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Martin Sawer", 
 			"story": 80, 
-			"name": "Fresh Food Store"
+			"name": "Fresh Food Store",
+			"value": "7"
 		},
 		{
 			"city": "Waldport", 
@@ -232,7 +239,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "James Mo", 
 			"story": 80, 
-			"name": "Mo's Seafood"
+			"name": "Mo's Seafood",
+			"value": "8"
 		},
 		{
 
@@ -262,7 +270,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Waren Overholts", 
 			"story": 80, 
-			"name": "Beach Bum Crab Shop"
+			"name": "Beach Bum Crab Shop",
+			"value": "9"
 		},
 		{
 			"city": "Florence", 
@@ -291,7 +300,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Tony Jones", 
 			"story": 80, 
-			"name": "Tony's Place"
+			"name": "Tony's Place",
+			"value": "10"
 		},
 		{
 
@@ -321,7 +331,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Tim Smith", 
 			"story": 80, 
-			"name": "Newport Fish-Mart"
+			"name": "Newport Fish-Mart",
+			"value": "11"
 		},
 		{
 			"city": "Waldport", 
@@ -350,7 +361,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Steve Carlton", 
 			"story": 80, 
-			"name": "Finest Fish"
+			"name": "Finest Fish",
+			"value": "12"
 		},
 		{
 
@@ -380,7 +392,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Toy Story", 
 			"story": 80, 
-			"name": "Fish-R-us!"
+			"name": "Fish-R-us!",
+			"value": "13"
 		},
 		{
 			"city": "Waldport", 
@@ -409,7 +422,8 @@
 			"lat": -30142.7272727273, 
 			"contact_name": "Camron Brown", 
 			"story": 80, 
-			"name": "The Big Clam"
+			"name": "The Big Clam",
+			"value": "14"
 		}
 	]
 }

@@ -32,7 +32,12 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 				xtype: 'panel',
 				itemId: 'infoBlock',
 				tpl: '</pre><div class="list-item-title">{name}</div><div class="list-item-description">{description}</div><div class="list-item-phone">Phone #: {phone}</div><div class="list-item-description">Representative: {contact_name}</div><div class="list-item-email">E-mail: {email}</div><div class="list-item-website">Website: {website}</div><pre>'
-			},			
+			},
+			// {
+			// 	xtype: 'panel',
+			// 	itemId: 'listBlock',
+			// 	tpl: '</pre><div class="list-item-title">{preparation} {name}</div><pre>'
+			// },					
 			{
 				config: {
 					scrollable: {
@@ -44,7 +49,7 @@ Ext.define('SeaGrant_Proto.view.Detail', {
 				// the list screen. Perhaps we will have to deal with the products root
 				// of the vendor selected, and link the vendors products to the product store.
 				xtype: 'list',
-				store: 'Vendor',
+				store: 'Vendor1',
 				itemId: 'Dpagelist',
 				loadingText: 'Loading Notes ...',
 				emptyText: '</pre><div class="notes-list-empty-text">No notes found.</div><pre>',

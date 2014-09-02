@@ -1,12 +1,12 @@
 Ext.define('SeaGrant_Proto.store.StateStore', {
     extend: 'Ext.data.Store',
-    alias: 'store.statestore',
+    // alias: 'store.statestore',
  
     config: {
  
         data: [
             {
-                id: 1,
+                id: 1, 
                 countryid: 1,
                 name: 'Tamil Nadu'
             },

@@ -30,26 +30,18 @@ Ext.define('SeaGrant_Proto.view.ListView', {
 				]
 			},			
 			{
+				xtype: 'list',
 				config: {
 					scrollable: {
 						direction: 'verticle',
 						directionLock: true
 					}
-				},
-				xtype: 'list',
+				},				
 				itemId: 'Lpagelist',
 				store: 'Vendor',
 				loadingText: 'Loading Notes ...',
 				emptyText: '</pre><div class="notes-list-empty-text">No notes found.</div><pre>',
 				itemTpl: '</pre><div class="list-item-name">{name}</div><pre>'
-				// if(((locationFlag = 1) && (productFlag = 0) && (currentFlag = 0)) || ((locationFlag = 1) && (productFlag = 0) && (currentFlag = 1)) || ((locationFlag = 0) && (productFlag = 0) && (currentFlag = 1))){
-				// 	store: 'Vendor',
-				// 	itemTpl: '</pre><div class="list-item-name">{name}</div><pre>'
-				// },
-				// if(((locationFlag = 0) && (productFlag = 1) && (currentFlag = 0)) || ((locationFlag = 0) && (productFlag = 1) && (currentFlag = 1)) || ((locationFlag = 1) && (productFlag = 1) && (currentFlag = 0)) || ((locationFlag = 1) && (productFlag = 1) && (currentFlag = 1))){
-				// 	store: 'Product',
-				// 	itemTpl: '</pre><div class="list-item-name">{name}</div><pre>'
-				// }				
 			},
 			{
 				xtype: 'SeaGrantMap',

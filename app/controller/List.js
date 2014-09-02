@@ -75,14 +75,14 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		});
 		store.clearFilter(); // this is the fix
 		store.filter(locationfilter); //now it works
-		var vendcount = store.getCount();
-		console.log(vendcount);
-		var homeView = this.getHomeView();
-		var crud = homeView.getComponent('vendnum'); // gets our display item in from the home page
-		console.log(crud.getData()); // trying to get into _data so I can add vendcount such that we can correctly access it
-		crud.setData(record); // needed to display tpl data on home view
-		console.log(homeView);
-		Ext.Viewport.setActiveItem(homeView);
+		// var vendcount = store.getCount();
+		// console.log(vendcount);
+		// var homeView = this.getHomeView();
+		// var crud = homeView.getComponent('vendnum'); // gets our display item in from the home page
+		// console.log(crud.getData()); // trying to get into _data so I can add vendcount such that we can correctly access it
+		// crud.setData(record); // needed to display tpl data on home view
+		// console.log(homeView);
+		// Ext.Viewport.setActiveItem(homeView);
 		// return vendcount;
 	},
 	onChooseProduct: function(index, record){
@@ -117,10 +117,15 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		var detailView = this.getDetailView();
 		detailView.getAt(1).setData(index.getData());
 		Ext.ComponentQuery.query('toolbar[itemId=detailPageToolbar]')[0].setTitle(index.data.name);
-		// console.log(index.data.name);
-		var store = Ext.data.StoreManager.lookup('Vendor');
-		console.log('This is the store.');
-		console.log(store);
+		console.log('These are the products we want to display in the detail screen');
+		// Since this will later be an api call, for now I have created another vendor1 store that will be sorted to find 
+		// the specific vendor so we can look at that vendor's products. Adding this store fixes the highlighting problem 
+		// when a user navigates back to the list page. The problem was that when we sorted the same vendor store all of the 
+		// list item ids were changed, so the list couldn't keep track of the selected item when the store was sorted.
+		var store1 = Ext.data.StoreManager.lookup('Vendor1');
+		// console.log('This is the store.');
+		// console.log(store);
+		// NOTE WHEN THIS IS A MERGE CONFLICT WE NEED TO KEEP THIS SECTION SO THAT WE CAN UPDATE THE SORTING FUNCTION
 		var productfilter = new Ext.util.Filter({
 			filterFn: function(item, record){
 				return item.get('name') === index.data.name;
@@ -128,10 +133,10 @@ Ext.define('SeaGrant_Proto.controller.List', {
 			root: 'data'
 		});
 		// console.log(index.data.products[0].name);
-		console.log(index.data.products.name);
-		store.clearFilter();
-		store.filter(productfilter);
-		console.log(detailView);
+		// console.log(index.data.products.name);
+		store1.clearFilter();
+		store1.filter(productfilter);
+		// console.log(detailView);
 		Ext.Viewport.animateActiveItem(detailView, this.slideLeftTransition);
 	},
 	// Functions dealing with 
