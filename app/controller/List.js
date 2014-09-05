@@ -55,11 +55,13 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		console.log('In controller(home): User Location toggle');
 		console.log(record._component._value[0]);
 		console.log(record);
-		if(record._component._value[0] == 1){
+		SeaGrant_Proto.tog = record._component._value[0];
+		if(record._component._value[0] === 1){
 			// This updates the user's location and how far from their location they would like to search for vendors/products
 			Ext.device.Geolocation.watchPosition({
 			    frequency: 3000, // Update every 3 seconds
 			    callback: function(position) {
+			    	SeaGrant_Proto.pos = position.coords;
 			        console.log('Position updated!', position.coords);
 			        // console.log(index._items.items[2]._value.data.val);
 					var dist = index._items.items[2]._value.data.val;
@@ -71,7 +73,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 			
 		}else{
 			Ext.device.Geolocation.clearWatch();
-		};
+		}
 	},
 	// This function may be unnecessary due to the fact that we set the distance in the callback function above
 	onSetDistance: function(index, record){
@@ -98,6 +100,8 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		store.clearFilter(); // this is the fix
 		store.filter(locationfilter); //now it works
 
+		SeaGrant_Proto.testStore = store;
+
 		// This correctly sets the form of data necissary for the tpl to read from
 		// var vendcount = {
 		// 	th: 'There are ',
@@ -112,6 +116,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		console.log(vendcount);
 		var homeView = this.getHomeView();
 		var crud = homeView.getComponent('vendnum'); // gets our display item in from the home page
+		var vendcount;
 		// This defines how the tpl data is printed out given the drop down table states
 		if ((SeaGrant_Proto.location !== 'Please choose a location') || (SeaGrant_Proto.product !== 'Please choose a product')){
 			if(SeaGrant_Proto.location === 'Please choose a location'){
@@ -162,6 +167,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 
 		var homeView = this.getHomeView();
 		var crud = homeView.getComponent('vendnum'); // gets our display item in from the home page
+		var vendcount;
 		// This defines how the tpl data is printed out given the drop down table states
 		if ((SeaGrant_Proto.location !== 'Please choose a location') || (SeaGrant_Proto.product !== 'Please choose a product')){
 			if(SeaGrant_Proto.product === 'Please choose a product'){
