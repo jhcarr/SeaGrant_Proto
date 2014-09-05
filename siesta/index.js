@@ -22,6 +22,7 @@ Harness.configure({
         // '../touch/src/device/Connection.js',
         // Controller
         '../app/controller/List.js',
+        
         '../touch/src/device/geolocation/Abstract.js',
         '../touch/src/device/geolocation/Cordova.js',
         '../touch/src/device/geolocation/Sencha.js',
@@ -66,12 +67,13 @@ Harness.configure({
 });
 
 Harness.start(
-    '010_sanity.t.js',
-    'home_test.t.js',
-    'detail_test.t.js',
-    'list_test.t.js',
-    'info_test.t.js',
-    'specific_test.t.js'
+    // '010_sanity.t.js',
+    // 'home_test.t.js',
+    // 'detail_test.t.js',
+    // 'list_test.t.js',
+    // 'info_test.t.js',
+    // 'specific_test.t.js',
+    'controller_test.t.js'
     // 'simple.t.js',
     // 'sane.t.js',
     // 'HelloWorld.t.js'
