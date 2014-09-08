@@ -16,7 +16,7 @@ This folder is where all of the files dealing with the MVC format are stored.
 Views-
 ------
 
-These are all of the files that define how the pages will be layed out and what components they contain.
+These are all of the files that define how the pages will be laid out and what components they contain.
 
 	.. note::
 		All of the views have a header and a back button. The one exception is the Home view which doesn't have a back button. Below is example code from the ListView that defines these elements.
@@ -30,7 +30,7 @@ Home:
 
 	.. image:: homeview.png
 
-	The **User location** section contains a toggle and a drop down menu, which determine if the app should be locating using the user location and what distance from the user it should be locating vendors. In the code Home view below we first add a togglefield to switch the user location on or off. Underneath the toggle we add a drop down menu for users to choose how far away from themselves they want to look for a vendor. Our listeners then grab this info when an event is fired and they use funtions to fire events to the controller. Then in the controller we use the functions to take the data input from the home screen to make an api call and get back data that relates to the user input.
+	The **User location** section contains a toggle and a drop down menu, which determine if the app should be locating using the user location and what distance from the user it should be locating vendors. In the code Home view below we first add a togglefield to switch the user location on or off. Underneath the toggle we add a drop down menu for users to choose how far away from themselves they want to look for a vendor. Our listeners then grab this info when an event is fired and they use functions to fire events to the controller. Then in the controller we use the functions to take the data input from the home screen to make an api call and get back data that relates to the user input.
 
 	.. literalinclude:: ../app/view/Home.js
 		:lines: 15-29, 87-96, 124-131
@@ -89,7 +89,7 @@ Detail:
 
 	.. image:: detailview.png
 
-	Here in the code we add the **vendor information block** and the **vendor's items list** in the Detail view. Then in the controller we get a info item depending on the list item we select, this item is sent to the info page.
+	Here in the code we add the **vendor information block** and the **vendor's items list** in the Detail view. Then in the controller we get an info item depending on the list item we select, this item is sent to the info page.
 
 	.. literalinclude:: ../app/view/Detail.js
 		:lines: 31-52, 65-69, 80-83
@@ -141,7 +141,7 @@ Vendors:
 		:lines: 5-24
 
 	.. note::
-		This code will not be displayed untill file names are cleaned up.
+		This code will not be displayed until file names are cleaned up.
 
 Locations:
 ++++++++++
@@ -237,7 +237,7 @@ super.loadUrl("file:///android_asset/www/index.html");
 to: super.loadUrl("file:///android_asset/www/index.html", 4000);
 
 	..note::
-		The 4000 added to the loadUrl makes it so that the splash screen is displayed for 4 seconds, so if you change this it will effect how long the splash screen is displayed.
+		The 4000 added to the loadUrl makes it so that the splash screen is displayed for 4 seconds, so if you change this it will affect how long the splash screen is displayed.
 
 Resources
 =========
@@ -245,7 +245,7 @@ Resources
 This file contains resources for Sencha such as CSS, icons, and SASS.
 
 	.. note::
-		Any formating shoud be done in sass/app.scss file, because that file will be used in the build process to overwrite the css/app.css file.
+		Any formatting should be done in sass/app.scss file, because that file will be used in the build process to overwrite the css/app.css file.
 
 Siesta
 ======
@@ -262,7 +262,7 @@ index.html
 
 index.js
 ++++++++
-	This file defines all of your preloads and declares your tests. One very important note on this file, your preloads must be defined in the correct order or you will get errors that will make your tests fail. ORDER OF PRELOADS IS KEY!
+	This file defines all of your preloads and declares your tests. One very important note on this file, your preloads must be defined in the correct order or you will get errors that will make your tests fail. **ORDER OF PRELOADS IS KEY!**
 
 siesta-2.0.8-lite
 +++++++++++++++++
