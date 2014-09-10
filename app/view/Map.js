@@ -1,89 +1,72 @@
-// Ext.define('SeaGrant_Proto.view.Map', {
-//     extend: 'Ext.Container',
-//     requires: ['Ext.Map'],
-//     xtype: 'SeaGrantMap',
- 
-//     config: {
-//         title: 'PlaygroundMap',
-//         layout: 'fit',
-//         items: [
-//             {
-//                 xtype: 'map',
-//                 mapOptions: {
-//                     center: new google.maps.LatLng(44.638477,-124.060546),
-//                     mapTypeId: google.maps.MapTypeId.ROADMAP,
-//                     zoom: 15
-//                 }
-//             }
-//         ]
-//     },
- 
-//     initialize: function(){
-//         this.callParent(arguments);
-//         this.initMap();
-//     },
- 
-//     initMap: function(){
- 
-//         var mapPanel = this.down('map');
-//         // var pnt = new google.maps.LatLng(44.638477,-124.060546);
-//         // setTimeout(mapPanel.setMapCenter(pnt), 100);
-//         var map = mapPanel.getMap();
-
-       
-//         // var panoramioLayer = new google.maps.panoramio.PanoramioLayer();
-//         // panoramioLayer.setMap(map);
-        
-//         var marker = new google.maps.Marker({
-//             map: map,
-//             animation: google.maps.Animation.DROP,
-//             position: new google.maps.LatLng(44.638477,-124.060546)
-//         });
- 
-//     }
-    
-// });
-
 Ext.define('SeaGrant_Proto.view.Map', {
-    extend: 'Ext.Map',
+    extend: 'Ext.Container',
+    requires: ['Ext.Map'],
     xtype: 'SeaGrantMap',
-    // monitorResize: true,
-    config: {
+
+   config: {
         layout: 'fit',
         items: [
             {
                 xtype: 'map',
-                // mapOptions: {
-                //     center: new google.maps.LatLng(44.634115, -124.062796),
-                //     mapTypeId: google.maps.MapTypeId.ROADMAP,
-                //     zoom: 17
-                // },
-                listeners: {
-                    delay: 500,
-                    maprender: function(extMapComponent, googleMapComp){
-                        var marker = new google.maps.Marker({
-                            map: this.getMap(),
-                            animation: google.maps.Animation.DROP,
-                            position: new google.maps.LatLng(44.634115, -124.062796)
-                        });
-                    }
+                id: 'SeaGrantMap',
+                // What MF added
+                // This Doesn't work: setCenter: new google.maps.LatLng(44.566988, -123.277046)
+                // Now, adding Map options centers the map if the view with the map is loaded before any other view
+                 mapOptions: {
+                    center: new google.maps.LatLng(44.634115, -124.062796),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    zoom: 18
                 }
             }
         ]
     },
     initialize: function(){
-        var gMap = this.getMap();
+        // TRYING TO MAKE MAP LOAD IN HERE
+        // Wasn't very successful
+        // var mapOptions = {
+        //     center: new google.maps.LatLng(44.634115, -124.062796),
+        //     mapTypeId: google.maps.MapTypeId.ROADMAP,
+        //     zoom: 18,
+        //     offsetWidth: 1
+        // };
+        // var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-        // var marker = new google.maps.Marker({
-        //     map: gMap,
-        //     animation: google.maps.Animation.DROP,
-        //     position: new google.maps.LatLng(44.634115, -124.062796)
-        // });
+        // Need this code, for more info on the process that works for our map so far, go to:
+        // http://www.joshmorony.com/integrating-the-google-maps-api-into-a-sencha-touch-application/
+        var me = this;
+        me.callParent(arguments);
+
+
+
+        // The fix that Sencha says is implemented (FYI: its not!)
+        // Also this fix doesn't work, because the map is not reinitialized when we go from home to list screen.
+        // var map = Ext.getCmp('SeaGrantMap').map;
+        // this.on({
+        //     show: function(){
+        //         google.maps.event.trigger(map, 'resize');
+        //         map.panTo(new google.maps.LatLng(44.634115, -124.062796));
+        //         google.maps.event.trigger(map, 'zoom_changed');
+        //     }
+        // }); 
+        // HELPER CODE 
+        // SEE: http://www.sencha.com/forum/showthread.php?151775-Ext.Map-rendered-incorrect-in-initially-hidden-Ext.tab.Panel
+        // google.maps.event.trigger(this.googleMap, 'resize');
+        // google.maps.event.trigger(this.googleMap, 'zoom_changed');
+        // this.googleMap.setCenter(coords);
+
+        this.initMap();
+    }, 
+    initMap: function(){
+ 
+        var mapPanel = this.down('map');
+        var gMap = mapPanel.getMap();
+
+        
+         
+        var marker = new google.maps.Marker({
+            map: gMap,
+            animation: google.maps.Animation.DROP,
+            position: new google.maps.LatLng(44.634115, -124.062796)
+        });
     }
-    // onResize: function(w, h){
-    //     Ext.Map.superclass.onResize.apply(this, arguments);
-    //     if(this.map){
-    //         google.maps.event.trigger(this.map, 'resize');
-    //     }
-    // }
 });

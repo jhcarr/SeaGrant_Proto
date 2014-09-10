@@ -233,15 +233,15 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		var store = Ext.data.StoreManager.lookup('Vendor');
 		// console.log(record);
 		// console.log(index);
-		var location = record._activeItem._data.city;
-		var locationfilter = new Ext.util.Filter({
-			filterFn: function(item, record){
-				return item.get('city') === location;
-			},
-			root: 'data'
-		});
-		store.clearFilter();
-		store.filter(locationfilter);
+		// var location = record._activeItem._data.city;
+		// var locationfilter = new Ext.util.Filter({
+		// 	filterFn: function(item, record){
+		// 		return item.get('city') === location;
+		// 	},
+		// 	root: 'data'
+		// });
+		// store.clearFilter();
+		// store.filter(locationfilter);
 		Ext.Viewport.animateActiveItem(this.getListView(), this.slideRightTransition);
 	},
 	onViewInfoCommand: function(){
