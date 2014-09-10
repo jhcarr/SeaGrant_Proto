@@ -54,17 +54,21 @@ Ext.define('SeaGrant_Proto.view.Map', {
         // google.maps.event.trigger(this.googleMap, 'zoom_changed');
         // this.googleMap.setCenter(coords);
 
+        
         this.initMap();
     }, 
     initMap: function(){
  
         var mapPanel = this.down('map');
-        var gMap = mapPanel.getMap();
+        SeaGrant_Proto.gMap = mapPanel.getMap();
 
-        
+        // this should reset our map center, but it doesn't
+        //  setTimeout(function() {
+        //    SeaGrant_Proto.gMap.panTo(new google.maps.LatLng(44.634115, -124.062796));
+        // }, 100);
          
         var marker = new google.maps.Marker({
-            map: gMap,
+            map: SeaGrant_Proto.gMap,
             animation: google.maps.Animation.DROP,
             position: new google.maps.LatLng(44.634115, -124.062796)
         });
