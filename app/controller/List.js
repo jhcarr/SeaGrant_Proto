@@ -116,7 +116,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 		console.log(vendcount);
 		var homeView = this.getHomeView();
 		var crud = homeView.getComponent('vendnum'); // gets our display item in from the home page
-		var vendcount;
+		
 		// This defines how the tpl data is printed out given the drop down table states
 		if ((SeaGrant_Proto.location !== 'Please choose a location') || (SeaGrant_Proto.product !== 'Please choose a product')){
 			if(SeaGrant_Proto.location === 'Please choose a location'){
@@ -161,7 +161,7 @@ Ext.define('SeaGrant_Proto.controller.List', {
 	onChooseProduct: function(index, record){
 		console.log('In controller(home): Drop Down list Products');
 		// console.log(record);
-		console.log('Product is: '+ record._value.data.name);
+		console.log('Product is: '+ record._value.data.name); 
 		SeaGrant_Proto.product = record._value.data.name;
 		var store = Ext.data.StoreManager.lookup('Vendor');
 
